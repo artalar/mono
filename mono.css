@@ -3,6 +3,11 @@ body {
   --mono-back: white;
 }
 
+* {
+  color: var(--mono-main);
+  background-color: var(--mono-back);
+}
+
 /* resets */
 .mono,
 .mono-all *,

@@ -8,5 +8,8 @@
   },
   "devDependencies": {
     "vite": "^2.7.2"
+  },
+  "dependencies": {
+    "colord": "^2.9.2"
   }
 }
