@@ -1,0 +1,7 @@
+html {
+  font-size: calc(0.5vw + 0.5em);
+  font-family: monospace;
+  line-height: 1.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

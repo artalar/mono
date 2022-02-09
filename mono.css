@@ -1,0 +1,30 @@
+body {
+  --mono-main: black;
+  --mono-back: white;
+}
+
+/* resets */
+.mono,
+.mono:before,
+.mono:after {
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+li.mono {
+  list-style: none;
+  position: relative;
+}
+li.mono + li.mono {
+  margin-top: 1.5rem;
+}
+li.mono:first-letter {
+  color: var(--mono-back);
+  background-color: var(--mono-main);
+  box-shadow:
+    -0.5rem 0 0 0 var(--mono-main),
+    -0.8rem 0 0 0 var(--mono-main),
+    -0.5rem -0.3rem 0 0 var(--mono-main),
+    -0.8rem  -0.3rem 0 0 var(--mono-main),
+    0 -0.3rem 0 0 var(--mono-main);
+}
