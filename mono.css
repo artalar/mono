@@ -5,26 +5,32 @@ body {
 
 /* resets */
 .mono,
+.mono-all *,
 .mono:before,
-.mono:after {
+.mono-all *:before,
+.mono:after,
+.mono-all *:after {
   box-sizing: border-box;
   font-family: monospace;
 }
 
-li.mono {
+ul.mono, .mono-all ul {
+  padding-left: 1.5rem;
+}
+
+li.mono, .mono-all li {
   list-style: none;
   position: relative;
 }
-li.mono + li.mono {
+li.mono + li.mono, .mono-all li + li {
   margin-top: 1.5rem;
 }
-li.mono:first-letter {
-  color: var(--mono-back);
+li.mono:before, .mono-all li:before {
+  content: '';
+  position: absolute;
+  top: 0.25rem;
+  left: -1.5rem;
+  width: 1rem;
+  height: 1rem;
   background-color: var(--mono-main);
-  box-shadow:
-    -0.5rem 0 0 0 var(--mono-main),
-    -0.8rem 0 0 0 var(--mono-main),
-    -0.5rem -0.3rem 0 0 var(--mono-main),
-    -0.8rem  -0.3rem 0 0 var(--mono-main),
-    0 -0.3rem 0 0 var(--mono-main);
 }
