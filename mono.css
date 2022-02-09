@@ -34,3 +34,18 @@ li.mono:before, .mono-all li:before {
   height: 1rem;
   background-color: var(--mono-main);
 }
+
+h1.mono, .mono-all h1,
+h2.mono, .mono-all h2,
+h3.mono, .mono-all h3,
+h4.mono, .mono-all h4
+{
+  border-bottom: 0.5rem solid var(--mono-main);
+}
+h1.mono:first-letter, .mono-all h1:first-letter,
+h2.mono:first-letter, .mono-all h2:first-letter,
+h3.mono:first-letter, .mono-all h3:first-letter,
+h4.mono:first-letter, .mono-all h4:first-letter {
+  color: var(--mono-back);
+  background-color: var(--mono-main);
+}
