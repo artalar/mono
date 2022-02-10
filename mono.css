@@ -2,6 +2,7 @@
 .mono-all {
   --mono-main: #000000;
   --mono-back: #ffffff;
+  font-family: monospace;
   color: var(--mono-main);
   background-color: var(--mono-back);
 }
@@ -52,9 +53,9 @@ button.mono:after,
   clip-path: polygon(
     0 30%,
     calc(100% - 0.8rem) 30%,
-    calc(100% - 0.8rem) 5%,
+    calc(100% - 0.8rem) 0%,
     100% 50%,
-    calc(100% - 0.8rem) 95%,
+    calc(100% - 0.8rem) 100%,
     calc(100% - 0.8rem) 70%,
     0 70%
   );
