@@ -1,14 +1,9 @@
-body {
-  --mono-main: black;
-  --mono-back: white;
-}
-
-* {
+.mono-container, .mono-all {
+  --mono-main: #000000;
+  --mono-back: #ffffff;
   color: var(--mono-main);
   background-color: var(--mono-back);
 }
-
-/* resets */
 .mono,
 .mono-all *,
 .mono:before,
@@ -17,6 +12,9 @@ body {
 .mono-all *:after {
   box-sizing: border-box;
   font-family: monospace;
+
+  color: var(--mono-main);
+  background-color: var(--mono-back);
 }
 
 ul.mono, .mono-all ul {
@@ -87,6 +85,7 @@ blockquote.mono:before, .mono-all blockquote:before {
   left: -0.5rem;
   height: 1rem;
   width: 3rem;
+  background-color: transparent;
   box-shadow:
     -0.5rem -0.8rem 0 0.1rem var(--mono-main),
     -0.2rem -0.5rem 0 0.1rem var(--mono-main);
