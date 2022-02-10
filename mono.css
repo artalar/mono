@@ -40,6 +40,26 @@ li.mono:before, .mono-all li:before {
   background-color: var(--mono-main);
 }
 
+code.mono, .mono-all code {
+  border: 1px solid var(--mono-main);
+}
+code.mono:before, .mono-all code:before {
+  content: '<';
+  margin-right: 0.5em;
+}
+code.mono:after, .mono-all code:after {
+  content: '>';
+  margin-left: 0.5em;
+}
+code.mono:before, .mono-all code:before,
+code.mono:after, .mono-all code:after {
+  font-weight: bold;
+  color: var(--mono-back);
+  background-color: var(--mono-main);
+  /* fix empty space when scale */
+  box-shadow: 0 0 0 1px var(--mono-main);
+}
+
 b.mono, .mono-all b {
   font-weight: unset;
   border: 0.2rem solid var(--mono-main);
