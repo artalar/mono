@@ -18,6 +18,66 @@
   background-color: var(--mono-back);
 }
 
+button.mono,
+.mono-all button {
+  position: relative;
+  cursor: pointer;
+  font-size: 1rem;
+  border: 0.4rem solid var(--mono-main);
+  height: 2.5rem;
+  min-width: 5rem;
+  color: var(--mono-main);
+  background-color: var(--mono-back);
+}
+button.mono + button.mono,
+.mono-all button + button {
+  margin-left: 1rem;
+}
+button.mono:before,
+.mono-all button:before {
+  content: '';
+  position: absolute;
+  width: 0.4rem;
+  height: 0.4rem;
+  top: 0;
+  left: -0.4rem;
+  background-color: var(--mono-back);
+}
+button.mono:after,
+.mono-all button:after {
+  content: '▶';
+  position: absolute;
+  font-size: 1.2rem;
+  top: -1rem;
+  right: -0.5rem;
+  background-color: var(--mono-back);
+}
+button.mono:active:after,
+.mono-all button:active:after {
+  font-size: 1.6rem;
+  top: -1.3rem;
+}
+button.mono:focus,
+.mono-all button:focus,
+button.mono:hover,
+.mono-all button:hover {
+  outline: none;
+}
+button.mono:focus:after,
+.mono-all button:focus:after,
+button.mono:hover:after,
+.mono-all button:hover:after {
+  animation: 500ms infinite alternate mono-button-arrow-move;animation-timing-function: easy-out;
+}
+@keyframes mono-button-arrow-move {
+  from {
+    transform: translateX(-10%);
+  }
+  to {
+    transform: translateX(30%);
+  }
+}
+
 ul.mono,
 .mono-all ul {
   padding-left: 1.5rem;
