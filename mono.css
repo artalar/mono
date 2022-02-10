@@ -2,6 +2,7 @@
 .mono-all {
   --mono-main: #000000;
   --mono-back: #ffffff;
+  font-family: monospace;
   color: var(--mono-main);
   background-color: var(--mono-back);
 }
