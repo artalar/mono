@@ -84,10 +84,12 @@ blockquote.mono:before, .mono-all blockquote:before {
   content: '';
   position: absolute;
   top: 0;
-  left: -2rem;
-  height: 100%;
-  width: 1rem;
-  background-color: var(--mono-main);
+  left: -0.5rem;
+  height: 1rem;
+  width: 3rem;
+  box-shadow:
+    -0.5rem -0.8rem 0 0.1rem var(--mono-main),
+    -0.2rem -0.5rem 0 0.1rem var(--mono-main);
 }
 
 h1.mono, .mono-all h1,
