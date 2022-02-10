@@ -123,4 +123,6 @@ p.mono:first-letter,
 .mono-all p:first-letter {
   color: var(--mono-back);
   background-color: var(--mono-main);
+  margin-left: 0.5rem;
+  box-shadow: -0.5em 0.25em 0 -0.0em var(--mono-main);
 }
