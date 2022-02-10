@@ -1,4 +1,5 @@
-.mono-container, .mono-all {
+.mono-container,
+.mono-all {
   --mono-main: #000000;
   --mono-back: #ffffff;
   color: var(--mono-main);
@@ -17,19 +18,23 @@
   background-color: var(--mono-back);
 }
 
-ul.mono, .mono-all ul {
+ul.mono,
+.mono-all ul {
   padding-left: 1.5rem;
 }
 
-li.mono, .mono-all li {
+li.mono,
+.mono-all li {
   list-style: none;
   position: relative;
 }
-li.mono + li.mono, .mono-all li + li {
+li.mono + li.mono,
+.mono-all li + li {
   margin-top: 1.5rem;
 }
-li.mono:before, .mono-all li:before {
-  content: '';
+li.mono:before,
+.mono-all li:before {
+  content: "";
   position: absolute;
   top: 0.25rem;
   left: -1.5rem;
@@ -38,19 +43,24 @@ li.mono:before, .mono-all li:before {
   background-color: var(--mono-main);
 }
 
-code.mono, .mono-all code {
+code.mono,
+.mono-all code {
   border: 1px dashed var(--mono-main);
 }
-code.mono:before, .mono-all code:before {
-  content: '<';
+code.mono:before,
+.mono-all code:before {
+  content: "<";
   margin-right: 0.5em;
 }
-code.mono:after, .mono-all code:after {
-  content: '>';
+code.mono:after,
+.mono-all code:after {
+  content: ">";
   margin-left: 0.5em;
 }
-code.mono:before, .mono-all code:before,
-code.mono:after, .mono-all code:after {
+code.mono:before,
+.mono-all code:before,
+code.mono:after,
+.mono-all code:after {
   font-weight: bold;
   color: var(--mono-back);
   background-color: var(--mono-main);
@@ -58,50 +68,56 @@ code.mono:after, .mono-all code:after {
   box-shadow: 0 0 0 1px var(--mono-main);
 }
 
-pre.mono, .mono-all pre {
+pre.mono,
+.mono-all pre {
   padding: 2px;
   border: 2px dashed var(--mono-main);
 }
 
-b.mono, .mono-all b {
+b.mono,
+.mono-all b {
   font-weight: unset;
   border: 0.2rem solid var(--mono-main);
 }
 
-strong.mono, .mono-all strong {
+strong.mono,
+.mono-all strong {
   font-weight: unset;
-  box-shadow:
-    inset 0 -0.25em var(--mono-main),
-    0 0.5em 0 0 var(--mono-main);
+  box-shadow: inset 0 -0.25em var(--mono-main), 0 0.5em 0 0 var(--mono-main);
 }
 
-blockquote.mono, .mono-all blockquote {
+blockquote.mono,
+.mono-all blockquote {
   position: relative;
 }
-blockquote.mono:before, .mono-all blockquote:before {
-  content: '';
+blockquote.mono:before,
+.mono-all blockquote:before {
+  content: "";
   position: absolute;
   top: 0;
   left: -0.5rem;
   height: 1rem;
   width: 3rem;
   background-color: transparent;
-  box-shadow:
-    -0.5rem -0.8rem 0 0.1rem var(--mono-main),
+  box-shadow: -0.5rem -0.8rem 0 0.1rem var(--mono-main),
     -0.2rem -0.5rem 0 0.1rem var(--mono-main);
 }
 
-h1.mono, .mono-all h1,
-h2.mono, .mono-all h2,
-h3.mono, .mono-all h3,
-h4.mono, .mono-all h4
-{
+h1.mono,
+.mono-all h1,
+h2.mono,
+.mono-all h2,
+h3.mono,
+.mono-all h3,
+h4.mono,
+.mono-all h4 {
   border-left: 4px solid var(--mono-main);
   border-top: 2px solid var(--mono-main);
   padding-left: 0.1em;
 }
 
-p.mono:first-letter, .mono-all p:first-letter {
+p.mono:first-letter,
+.mono-all p:first-letter {
   color: var(--mono-back);
   background-color: var(--mono-main);
 }
