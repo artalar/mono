@@ -278,8 +278,8 @@ input[type="radio"].mono:before,
   border: 2px solid var(--mono-main);
 }
 
-input[type="radio"].mono ~ span,
-.mono-all input[type="radio"] ~ span {
+input[type="radio"].mono + *,
+.mono-all input[type="radio"] + * {
   position: relative;
   display: inline-block;
   padding-top: 0.1rem;
@@ -287,8 +287,8 @@ input[type="radio"].mono ~ span,
   margin-left: 1.5rem;
   margin-bottom: 10px;
 }
-input[type="radio"].mono ~ span:before,
-.mono-all input[type="radio"] ~ span:before {
+input[type="radio"].mono + *:before,
+.mono-all input[type="radio"] + *:before {
   position: absolute;
   content: "";
   left: calc((1.5rem / 2 * -1) - 1px);
