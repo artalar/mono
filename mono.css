@@ -169,3 +169,56 @@ p.mono:first-letter,
   margin-left: 0.5rem;
   box-shadow: -0.5em 0.25em 0 -0em var(--mono-main);
 }
+
+input[type="radio"].mono,
+.mono-all input[type="radio"] {
+  position: relative;
+  display: block;
+  margin: 0;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="radio"].mono:before,
+.mono-all input[type="radio"]:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--mono-main);
+}
+
+input[type="radio"].mono ~ span,
+.mono-all input[type="radio"] ~ span {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1rem;
+  padding-inline-start: 10px;
+  margin-left: 1.5rem;
+  margin-bottom: 10px;
+}
+input[type="radio"].mono ~ span:before,
+.mono-all input[type="radio"] ~ span:before {
+  position: absolute;
+  content: "";
+  left: calc((1.5rem / 2 * -1) - 1px);
+  top: 0;
+  width: 2px;
+  height: calc(100% + 10px);
+  background-color: var(--mono-main);
+}
+
+input[type="radio"].mono:checked:after,
+.mono-all input[type="radio"]:checked:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: calc(1.5rem / 2);
+  height: calc(1.5rem / 2);
+  transform: translate(50%, 50%);
+  background-color: var(--mono-main);
+}
