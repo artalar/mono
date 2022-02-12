@@ -22,6 +22,7 @@
 button.mono,
 .mono-all button {
   position: relative;
+  padding-bottom: 0.2rem;
   cursor: pointer;
   font-size: 1rem;
   border: 0.4rem solid var(--mono-main);
@@ -36,19 +37,13 @@ button.mono + button.mono,
   margin-left: 1rem;
 }
 button.mono:before,
-.mono-all button:before,
-button.mono:after,
-.mono-all button:after {
+.mono-all button:before {
   content: "";
   position: absolute;
-  top: -0.6rem;
+  top: -0.8rem;
   left: -0.4rem;
   width: calc(100% + 0.8rem);
   height: 0.8rem;
-  background-color: var(--mono-back);
-}
-button.mono:after,
-.mono-all button:after {
   background-color: var(--mono-main);
   clip-path: polygon(
     0 30%,
@@ -60,8 +55,8 @@ button.mono:after,
     0 70%
   );
 }
-button.mono:active:after,
-.mono-all button:active:after {
+button.mono:active:before,
+.mono-all button:active:before {
   transform: scale(1.1);
 }
 
