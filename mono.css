@@ -60,6 +60,10 @@ button.mono:after,
     0 70%
   );
 }
+button.mono:active:after,
+.mono-all button:active:after {
+  transform: scale(1.1);
+}
 
 a.mono,
 .mono-all a {
