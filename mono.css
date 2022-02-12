@@ -24,6 +24,7 @@ button.mono,
   position: relative;
   padding-bottom: 0.2rem;
   cursor: pointer;
+  outline: none;
   font-size: 1rem;
   border: 0.4rem solid var(--mono-main);
   border-top: none;
@@ -59,6 +60,29 @@ button.mono:active:before,
 .mono-all button:active:before {
   transform: scale(1.1);
 }
+button.mono:focus:after,
+.mono-all button:focus:after {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  width: calc(100% + 2rem);
+  height: calc(100% + 2rem);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 4px
+  );
+  clip-path: polygon(
+    1rem calc(100% - 0.5rem),
+    calc(100% - 0.5rem) calc(100% - 0.5rem),
+    calc(100% - 0.5rem) 1rem,
+    100% 1rem,
+    100% 100%,
+    1rem 100%
+  );
+}
+
 
 a.mono,
 .mono-all a {
