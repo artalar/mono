@@ -188,7 +188,7 @@ input[type="radio"].mono:before,
   top: 0;
   width: 1.5rem;
   height: 1.5rem;
-  border: 2px solid var(--mono-main);
+  border: 0.2rem solid var(--mono-main);
 }
 
 input[type="radio"].mono + *,
