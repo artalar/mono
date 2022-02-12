@@ -61,6 +61,70 @@ button.mono:after,
   );
 }
 
+a.mono,
+.mono-all a {
+  position: relative;
+  text-decoration: none;
+  outline: none;
+}
+a.mono:before,
+.mono-all a:before {
+  content: "";
+  position: absolute;
+  bottom: -0.4rem;
+  left: 0;
+  width: 100%;
+  height: 0.6rem;
+  background-color: var(--mono-main);
+  clip-path: polygon(
+    0 40%,
+    calc(100% - 0.5rem) 40%,
+    calc(100% - 0.5rem) 0%,
+    100% 50%,
+    calc(100% - 0.5rem) 100%,
+    calc(100% - 0.5rem) 60%,
+    0 60%
+  );
+}
+a.mono:focus:before,
+.mono-all a:focus:before {
+  clip-path: polygon(
+    0 25%,
+    calc(100% - 0.5rem) 25%,
+    calc(100% - 0.5rem) 0%,
+    100% 50%,
+    calc(100% - 0.5rem) 100%,
+    calc(100% - 0.5rem) 75%,
+    0 75%
+  );
+}
+a.mono:visited:before,
+.mono-all a:visited:before {
+  clip-path: polygon(
+    0 40%,
+    calc(100% - 0.5rem) 40%,
+    calc(100% - 0.5rem) 0%,
+    100% 0%,
+    100% 100%,
+    calc(100% - 0.5rem) 100%,
+    calc(100% - 0.5rem) 60%,
+    0 60%
+  );
+}
+a.mono:visited:focus:before,
+.mono-all a:visited:focus:before {
+  clip-path: polygon(
+    0 25%,
+    calc(100% - 0.5rem) 25%,
+    calc(100% - 0.5rem) 0%,
+    100% 0%,
+    100% 100%,
+    calc(100% - 0.5rem) 100%,
+    calc(100% - 0.5rem) 75%,
+    0 75%
+  );
+}
+
 ul.mono,
 .mono-all ul {
   padding-left: 1.5rem;
