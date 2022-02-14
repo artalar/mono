@@ -246,7 +246,7 @@ h4.mono,
 .mono-all h4 {
   border-left: 4px solid var(--mono-main);
   border-top: 2px solid var(--mono-main);
-  padding-left: 0.1em;
+  padding-left: 0.3em;
 }
 
 p.mono:first-letter,
