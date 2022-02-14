@@ -56,10 +56,6 @@ button.mono:before,
     0 70%
   );
 }
-button.mono:active:before,
-.mono-all button:active:before {
-  transform: scale(1.1);
-}
 button.mono:focus:after,
 .mono-all button:focus:after {
   content: "";
@@ -80,6 +76,14 @@ button.mono:focus:after,
     100% 1rem,
     100% 100%,
     1rem 100%
+  );
+}
+button.mono:active:after,
+.mono-all button:active:after {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 7px
   );
 }
 
@@ -109,18 +113,6 @@ a.mono:before,
     0 60%
   );
 }
-a.mono:focus:before,
-.mono-all a:focus:before {
-  clip-path: polygon(
-    0 25%,
-    calc(100% - 0.5rem) 25%,
-    calc(100% - 0.5rem) 0%,
-    100% 50%,
-    calc(100% - 0.5rem) 100%,
-    calc(100% - 0.5rem) 75%,
-    0 75%
-  );
-}
 a.mono:visited:before,
 .mono-all a:visited:before {
   clip-path: polygon(
@@ -134,17 +126,34 @@ a.mono:visited:before,
     0 60%
   );
 }
-a.mono:visited:focus:before,
-.mono-all a:visited:focus:before {
+a.mono:focus:after,
+.mono-all a:focus:after {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  width: calc(100% + 1.5rem);
+  height: calc(100% + 2rem);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 4px
+  );
   clip-path: polygon(
-    0 25%,
-    calc(100% - 0.5rem) 25%,
-    calc(100% - 0.5rem) 0%,
-    100% 0%,
+    1rem calc(100% - 0.5rem),
+    calc(100% - 0.5rem) calc(100% - 0.5rem),
+    calc(100% - 0.5rem) 1rem,
+    100% 1rem,
     100% 100%,
-    calc(100% - 0.5rem) 100%,
-    calc(100% - 0.5rem) 75%,
-    0 75%
+    1rem 100%
+  );
+}
+a.mono:active:after,
+.mono-all a:active:after {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 7px
   );
 }
 
@@ -375,5 +384,9 @@ summary.mono:focus:before,
 }
 summary.mono:active:before,
 .mono-all summary:active:before {
-  transform: scale(1.2);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 7px
+  );
 }
