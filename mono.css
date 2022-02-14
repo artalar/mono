@@ -321,3 +321,58 @@ input[type="radio"].mono:checked:after,
     calc(50% + 0.1rem) 0
   );
 }
+
+details.mono,
+.mono-all details {
+  margin: 1rem 0;
+  padding: 1rem;
+  padding-left: 2rem;
+  border: 0.2rem solid var(--mono-main);
+}
+summary.mono,
+.mono-all summary {
+  position: relative;
+  list-style: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  outline: none;
+}
+details[open].mono summary.mono,
+.mono-all details[open] summary {
+  margin-bottom: 0.5rem;
+}
+summary.mono:before,
+.mono-all summary:before {
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  left: -1.4rem;
+  width: 0.8rem;
+  height: calc(100% + 1rem);
+  background-color: var(--mono-main);
+  clip-path: polygon(
+    25% 0,
+    25% calc(100% - 0.4rem),
+    0 calc(100% - 0.4rem),
+    50% 100%,
+    100% calc(100% - 0.4rem),
+    75% calc(100% - 0.4rem),
+    75% 0
+  );
+}
+summary.mono:focus:before,
+.mono-all summary:focus:before {
+  left: -2rem;
+  width: 2rem;
+  background-color: transparent;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 4px
+  );
+  clip-path: none;
+}
+summary.mono:active:before,
+.mono-all summary:active:before {
+  transform: scale(1.2);
+}
