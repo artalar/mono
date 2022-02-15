@@ -373,7 +373,7 @@ summary.mono:before,
 summary.mono:focus:before,
 .mono-all summary:focus:before {
   left: -1.5rem;
-  width: 1.2rem;s
+  width: 1.2rem;
   background-color: transparent;
   background-image: repeating-linear-gradient(
     -45deg,
@@ -384,6 +384,42 @@ summary.mono:focus:before,
 }
 summary.mono:active:before,
 .mono-all summary:active:before {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 7px
+  );
+}
+
+input[type=color].mono,
+.mono-all input[type=color] {
+  position: relative;
+  outline: none;
+}
+input[type=color].mono:focus:after,
+.mono-all input[type=color]:focus:after {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  width: calc(100% + 1.6rem);
+  height: calc(100% + 1.6rem);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 4px
+  );
+  clip-path: polygon(
+    1rem calc(100% - 0.5rem),
+    calc(100% - 0.5rem) calc(100% - 0.5rem),
+    calc(100% - 0.5rem) 1rem,
+    100% 1rem,
+    100% 100%,
+    1rem 100%
+  );
+}
+input[type=color].mono:active:after,
+.mono-all input[type=color]:active:after {
   background-image: repeating-linear-gradient(
     -45deg,
     transparent 0 3px,
