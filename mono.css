@@ -372,8 +372,8 @@ summary.mono:before,
 }
 summary.mono:focus:before,
 .mono-all summary:focus:before {
-  left: -2rem;
-  width: 2rem;
+  left: -1.5rem;
+  width: 1.2rem;s
   background-color: transparent;
   background-image: repeating-linear-gradient(
     -45deg,
