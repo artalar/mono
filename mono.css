@@ -328,7 +328,7 @@ input[type="range"].mono,
   -webkit-appearance: none;
   outline: none;
   position: relative;
-  border: 3px solid var(--mono-main);
+  border: 0.3rem solid var(--mono-main);
   padding: 0.8rem 0.5rem;
   height: 1.5rem;
   width: 20rem;
