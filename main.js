@@ -43,8 +43,6 @@ document.getElementById("colormix").addEventListener("click", (event) => {
   );
   const back = contrast(main);
 
-  console.log(main.toHsl());
-
   document.body.style.setProperty("--mono-main", main.toHex());
   document.body.style.setProperty("--mono-back", back.toHex());
   pickerMain.value = main.toHex();
