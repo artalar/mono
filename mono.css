@@ -89,7 +89,6 @@ button.mono:active:after,
   );
 }
 
-
 a.mono,
 .mono-all a {
   position: relative;
@@ -318,7 +317,7 @@ details[open].mono summary.mono,
 }
 summary.mono:before,
 .mono-all summary:before {
-  content: '';
+  content: "";
   position: absolute;
   top: -0.5rem;
   left: -1.4rem;
@@ -356,14 +355,14 @@ summary.mono:active:before,
   );
 }
 
-input[type=color].mono,
-.mono-all input[type=color] {
+input[type="color"].mono,
+.mono-all input[type="color"] {
   position: relative;
   outline: none;
   height: 2.5rem;
 }
-input[type=color].mono:focus:after,
-.mono-all input[type=color]:focus:after {
+input[type="color"].mono:focus:after,
+.mono-all input[type="color"]:focus:after {
   content: "";
   position: absolute;
   top: -1rem;
@@ -384,8 +383,8 @@ input[type=color].mono:focus:after,
     1rem 100%
   );
 }
-input[type=color].mono:active:after,
-.mono-all input[type=color]:active:after {
+input[type="color"].mono:active:after,
+.mono-all input[type="color"]:active:after {
   background-image: repeating-linear-gradient(
     -45deg,
     transparent 0 3px,
@@ -399,7 +398,7 @@ input[type="range"].mono,
   -webkit-appearance: none;
   outline: none;
   position: relative;
-  border: 0.3rem solid var(--mono-main);
+  border: 0.2rem solid var(--mono-main);
   padding: 0.8rem 0.5rem;
   height: 1.5rem;
   width: 20rem;
@@ -407,14 +406,14 @@ input[type="range"].mono,
 input[type="range"].mono::-webkit-slider-runnable-track,
 .mono-all input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 0.3rem;
+  height: 0.2rem;
   cursor: pointer;
   background: var(--mono-main);
 }
 input[type="range"].mono::-webkit-slider-thumb,
 .mono-all input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 0.3rem solid var(--mono-main);
+  border: 0.2rem solid var(--mono-main);
   height: 1rem;
   width: 1rem;
   background: var(--mono-back);
