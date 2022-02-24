@@ -37,7 +37,19 @@ document
     isSync = event.target.checked;
   });
 
-document.getElementById("colorreset").addEventListener("click", toDefault);
+document.getElementById("colormix").addEventListener("click", (event) => {
+  const main = colord(
+    `hsl(${random(360)}, ${random(100, 20)}%, ${random(90, 10)}%)`
+  );
+  const back = contrast(main);
+
+  console.log(main.toHsl());
+
+  document.body.style.setProperty("--mono-main", main.toHex());
+  document.body.style.setProperty("--mono-back", back.toHex());
+  pickerMain.value = main.toHex();
+  pickerBack.value = back.toHex();
+});
 
 document.getElementById("colorinvert").addEventListener("click", (event) => {
   const back = document.body.style.getPropertyValue("--mono-main");
@@ -45,8 +57,18 @@ document.getElementById("colorinvert").addEventListener("click", (event) => {
 
   document.body.style.setProperty("--mono-main", main);
   document.body.style.setProperty("--mono-back", back);
-  document.getElementById("colorpicker").value = main;
+  pickerMain.value = main;
+  pickerBack.value = back;
 });
+
+document.getElementById("colorreset").addEventListener("click", toDefault);
+
+function toDefault() {
+  document.body.style.setProperty("--mono-main", "#000000");
+  document.body.style.setProperty("--mono-back", "#ffffff");
+  pickerMain.value = "#000000";
+  pickerBack.value = "#ffffff";
+}
 
 function contrast(color) {
   const isLight = color.isLight();
@@ -59,10 +81,8 @@ function contrast(color) {
   return oposite;
 }
 
-toDefault();
-function toDefault() {
-  document.body.style.setProperty("--mono-main", "#000000");
-  document.body.style.setProperty("--mono-back", "#ffffff");
-  document.getElementById("colorpicker-main").value = "#000000";
-  document.getElementById("colorpicker-back").value = "#ffffff";
+function random(n, min = 0) {
+  return Math.max(min, Math.floor(Math.random() * n));
 }
+
+toDefault();
