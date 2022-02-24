@@ -11,13 +11,18 @@
     <main>
       <h1>mono - Brutalism in UI</h1>
       <input id="colorpicker-back" type="color" />
-      <input id="colorpicker-sync" type="checkbox" title="sync colors" checked />
+      <input
+        id="colorpicker-sync"
+        type="checkbox"
+        title="sync colors"
+        checked
+      />
       <input id="colorpicker-main" type="color" />
       <br />
       <br />
-      <button id="colorreset" style="width:7rem">reset</button>
+      <button id="colorreset" style="width: 7rem">reset</button>
       <br />
-      <button id="colorinvert" style="width:7rem">invert</button>
+      <button id="colorinvert" style="width: 7rem">invert</button>
       <section>
         <header>
           <h2 id="paragraph">Paragraph</h2>
@@ -150,28 +155,36 @@ html {
         <header id="radio">
           <h2>Radio buttons</h2>
         </header>
-        <label>
-          <input type="radio" name="radio" checked />
-          <span>Radio button with label</span>
-        </label>
-        <label>
-          <input type="radio" name="radio" />
-          <span
-            >Something Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Culpa, cum quas temporibus excepturi. Lorem, ipsum dolor.</span
+        <fieldset>
+          <legend>Radios</legend>
+          <label>
+            <input type="radio" name="radio" checked />
+            <span>Radio button with label</span>
+          </label>
+          <br />
+          <label>
+            <input type="radio" name="radio" />
+            <span
+              >Something Lorem, ipsum dolor sit amet consectetur adipisicing
+              elit. Culpa, cum quas temporibus excepturi. Lorem, ipsum
+              dolor.</span
+            >
+          </label>
+          <br />
+          <input type="radio" name="radio" id="example-first" />
+          <label for="example-first">Without wrapping to label</label>
+          <br />
+          <input type="radio" name="radio" id="example-second" />
+          <label for="example-second"
+            ><span
+              >Something Lorem ipsum dolor sit amet consectetur, adipisicing
+              elit. Vel excepturi quae rerum beatae eos tempore esse tenetur ad
+              dicta sint nostrum rem ullam laboriosam quasi, nisi ipsa? Sunt,
+              aut animi. Suscipit accusamus illum ipsam saepe nemo aperiam
+              iure?</span
+            ></label
           >
-        </label>
-        <input type="radio" name="radio" id="example-first" />
-        <label for="example-first">Without wrapping to label</label>
-        <input type="radio" name="radio" id="example-second" />
-        <label for="example-second"
-          ><span
-            >SOmething Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Vel excepturi quae rerum beatae eos tempore esse tenetur ad dicta
-            sint nostrum rem ullam laboriosam quasi, nisi ipsa? Sunt, aut animi.
-            Suscipit accusamus illum ipsam saepe nemo aperiam iure?</span
-          ></label
-        >
+        </fieldset>
       </section>
     </main>
     <script type="module" src="/main.js"></script>
