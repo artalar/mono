@@ -7,7 +7,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^2.7.2"
+    "vite": "^2.8.4"
   },
   "dependencies": {
     "colord": "^2.9.2"
