@@ -19,6 +19,99 @@
   background-color: var(--mono-back);
 }
 
+a.mono,
+.mono-all a {
+  position: relative;
+  text-decoration: none;
+  outline: none;
+}
+a.mono:before,
+.mono-all a:before {
+  content: "";
+  position: absolute;
+  bottom: -0.4rem;
+  left: 0;
+  width: 100%;
+  height: 0.6rem;
+  background-color: var(--mono-main);
+  clip-path: polygon(
+    0 40%,
+    calc(100% - 0.5rem) 40%,
+    calc(100% - 0.5rem) 0%,
+    100% 50%,
+    calc(100% - 0.5rem) 100%,
+    calc(100% - 0.5rem) 60%,
+    0 60%
+  );
+}
+a.mono:visited:before,
+.mono-all a:visited:before {
+  clip-path: polygon(
+    0 40%,
+    calc(100% - 0.5rem) 40%,
+    calc(100% - 0.5rem) 0%,
+    100% 0%,
+    100% 100%,
+    calc(100% - 0.5rem) 100%,
+    calc(100% - 0.5rem) 60%,
+    0 60%
+  );
+}
+a.mono:focus:after,
+.mono-all a:focus:after {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  width: calc(100% + 1.5rem);
+  height: calc(100% + 2rem);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 4px
+  );
+  clip-path: polygon(
+    1rem calc(100% - 0.5rem),
+    calc(100% - 0.5rem) calc(100% - 0.5rem),
+    calc(100% - 0.5rem) 1rem,
+    100% 1rem,
+    100% 100%,
+    1rem 100%
+  );
+}
+a.mono:active:after,
+.mono-all a:active:after {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 7px
+  );
+}
+
+b.mono,
+.mono-all b {
+  font-weight: unset;
+  border: 0.2rem solid var(--mono-main);
+}
+
+blockquote.mono,
+.mono-all blockquote {
+  position: relative;
+  margin: 2rem;
+}
+blockquote.mono:before,
+.mono-all blockquote:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -0.5rem;
+  height: 1rem;
+  width: 3rem;
+  background-color: transparent;
+  box-shadow: -0.5rem -0.8rem 0 0.1rem var(--mono-main),
+    -0.2rem -0.5rem 0 0.1rem var(--mono-main);
+}
+
 button.mono,
 .mono-all button {
   position: relative;
@@ -89,102 +182,6 @@ button.mono:active:after,
   );
 }
 
-a.mono,
-.mono-all a {
-  position: relative;
-  text-decoration: none;
-  outline: none;
-}
-a.mono:before,
-.mono-all a:before {
-  content: "";
-  position: absolute;
-  bottom: -0.4rem;
-  left: 0;
-  width: 100%;
-  height: 0.6rem;
-  background-color: var(--mono-main);
-  clip-path: polygon(
-    0 40%,
-    calc(100% - 0.5rem) 40%,
-    calc(100% - 0.5rem) 0%,
-    100% 50%,
-    calc(100% - 0.5rem) 100%,
-    calc(100% - 0.5rem) 60%,
-    0 60%
-  );
-}
-a.mono:visited:before,
-.mono-all a:visited:before {
-  clip-path: polygon(
-    0 40%,
-    calc(100% - 0.5rem) 40%,
-    calc(100% - 0.5rem) 0%,
-    100% 0%,
-    100% 100%,
-    calc(100% - 0.5rem) 100%,
-    calc(100% - 0.5rem) 60%,
-    0 60%
-  );
-}
-a.mono:focus:after,
-.mono-all a:focus:after {
-  content: "";
-  position: absolute;
-  top: -1rem;
-  left: -1rem;
-  width: calc(100% + 1.5rem);
-  height: calc(100% + 2rem);
-  background-image: repeating-linear-gradient(
-    -45deg,
-    transparent 0 3px,
-    var(--mono-main) 3px 4px
-  );
-  clip-path: polygon(
-    1rem calc(100% - 0.5rem),
-    calc(100% - 0.5rem) calc(100% - 0.5rem),
-    calc(100% - 0.5rem) 1rem,
-    100% 1rem,
-    100% 100%,
-    1rem 100%
-  );
-}
-a.mono:active:after,
-.mono-all a:active:after {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    transparent 0 3px,
-    var(--mono-main) 3px 7px
-  );
-}
-
-ul.mono,
-.mono-all ul {
-  padding-left: 1.5rem;
-}
-
-li.mono,
-.mono-all li {
-  list-style: none;
-  position: relative;
-}
-li.mono + li.mono,
-.mono-all li + li {
-  margin-top: 1.5rem;
-}
-li.mono:before,
-.mono-all li:before {
-  content: "";
-  position: absolute;
-  top: 0.5rem;
-  left: -1.5rem;
-  width: 1rem;
-  height: 1rem;
-  color: var(--mono-back);
-  background-color: var(--mono-main);
-  box-shadow: 0.4rem -0.4rem 0 -0.1rem var(--mono-main);
-}
-
 code.mono,
 .mono-all code {
   border: 1px dashed var(--mono-main);
@@ -210,40 +207,16 @@ code.mono:after,
   box-shadow: 0 0 0 1px var(--mono-main);
 }
 
-pre.mono,
-.mono-all pre {
-  padding: 0.5rem 1rem;
-  border: 2px dashed var(--mono-main);
-}
-
-b.mono,
-.mono-all b {
-  font-weight: unset;
+details.mono,
+.mono-all details {
+  margin: 1rem 0;
+  padding: 1rem;
+  padding-left: 2rem;
   border: 0.2rem solid var(--mono-main);
 }
-
-strong.mono,
-.mono-all strong {
-  font-weight: unset;
-  box-shadow: inset 0 -0.25em var(--mono-main), 0 0.5em 0 0 var(--mono-main);
-}
-
-blockquote.mono,
-.mono-all blockquote {
-  position: relative;
-  margin: 2rem;
-}
-blockquote.mono:before,
-.mono-all blockquote:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -0.5rem;
-  height: 1rem;
-  width: 3rem;
-  background-color: transparent;
-  box-shadow: -0.5rem -0.8rem 0 0.1rem var(--mono-main),
-    -0.2rem -0.5rem 0 0.1rem var(--mono-main);
+details[open].mono summary.mono,
+.mono-all details[open] summary {
+  margin-bottom: 0.5rem;
 }
 
 h1.mono,
@@ -258,101 +231,6 @@ h4.mono,
   border-top: 2px solid var(--mono-main);
   padding-top: 0.2em;
   padding-left: 0.3em;
-}
-
-p.mono:first-letter,
-.mono-all p:first-letter {
-  color: var(--mono-back);
-  background-color: var(--mono-main);
-  margin-left: 0.5rem;
-  box-shadow: -0.5em 0.25em 0 -0em var(--mono-main);
-}
-
-input[type="radio"].mono,
-.mono-all input[type="radio"] {
-  position: relative;
-  margin: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-right: 0.5rem;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 1rem var(--mono-main);
-  clip-path: circle(50%);
-}
-input[type="radio"].mono:before,
-.mono-all input[type="radio"]:before {
-  position: absolute;
-  content: "";
-  left: 0.125rem;
-  top: 0.125rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  background-color: var(--mono-back);
-  border: 0.15rem solid var(--mono-back);
-  border-radius: 50%;
-}
-input[type="radio"].mono:checked:before,
-.mono-all input[type="radio"]:checked:before {
-  background-color: var(--mono-main);
-}
-
-details.mono,
-.mono-all details {
-  margin: 1rem 0;
-  padding: 1rem;
-  padding-left: 2rem;
-  border: 0.2rem solid var(--mono-main);
-}
-summary.mono,
-.mono-all summary {
-  position: relative;
-  list-style: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  outline: none;
-}
-details[open].mono summary.mono,
-.mono-all details[open] summary {
-  margin-bottom: 0.5rem;
-}
-summary.mono:before,
-.mono-all summary:before {
-  content: "";
-  position: absolute;
-  top: -0.5rem;
-  left: -1.4rem;
-  width: 0.8rem;
-  height: calc(100% + 1rem);
-  background-color: var(--mono-main);
-  clip-path: polygon(
-    25% 0,
-    25% calc(100% - 0.4rem),
-    0 calc(100% - 0.4rem),
-    50% 100%,
-    100% calc(100% - 0.4rem),
-    75% calc(100% - 0.4rem),
-    75% 0
-  );
-}
-summary.mono:focus:before,
-.mono-all summary:focus:before {
-  left: -1.5rem;
-  width: 1.2rem;
-  background-color: transparent;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    transparent 0 3px,
-    var(--mono-main) 3px 4px
-  );
-  clip-path: none;
-}
-summary.mono:active:before,
-.mono-all summary:active:before {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    transparent 0 3px,
-    var(--mono-main) 3px 7px
-  );
 }
 
 input[type="color"].mono,
@@ -390,6 +268,34 @@ input[type="color"].mono:active:after,
     transparent 0 3px,
     var(--mono-main) 3px 7px
   );
+}
+
+input[type="radio"].mono,
+.mono-all input[type="radio"] {
+  position: relative;
+  margin: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1rem var(--mono-main);
+  clip-path: circle(50%);
+}
+input[type="radio"].mono:before,
+.mono-all input[type="radio"]:before {
+  position: absolute;
+  content: "";
+  left: 0.125rem;
+  top: 0.125rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: var(--mono-back);
+  border: 0.15rem solid var(--mono-back);
+  border-radius: 50%;
+}
+input[type="radio"].mono:checked:before,
+.mono-all input[type="radio"]:checked:before {
+  background-color: var(--mono-main);
 }
 
 input[type="range"].mono,
@@ -445,4 +351,99 @@ input[type="range"].mono:focus:after,
     100% 100%,
     1.2rem 100%
   );
+}
+
+li.mono,
+.mono-all li {
+  list-style: none;
+  position: relative;
+}
+li.mono + li.mono,
+.mono-all li + li {
+  margin-top: 1.5rem;
+}
+li.mono:before,
+.mono-all li:before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: -1.5rem;
+  width: 1rem;
+  height: 1rem;
+  color: var(--mono-back);
+  background-color: var(--mono-main);
+  box-shadow: 0.4rem -0.4rem 0 -0.1rem var(--mono-main);
+}
+
+p.mono:first-letter,
+.mono-all p:first-letter {
+  color: var(--mono-back);
+  background-color: var(--mono-main);
+  margin-left: 0.5rem;
+  box-shadow: -0.5em 0.25em 0 -0em var(--mono-main);
+}
+
+pre.mono,
+.mono-all pre {
+  padding: 0.5rem 1rem;
+  border: 2px dashed var(--mono-main);
+}
+
+strong.mono,
+.mono-all strong {
+  font-weight: unset;
+  box-shadow: inset 0 -0.25em var(--mono-main), 0 0.5em 0 0 var(--mono-main);
+}
+
+summary.mono,
+.mono-all summary {
+  position: relative;
+  list-style: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  outline: none;
+}
+summary.mono:before,
+.mono-all summary:before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: -1.4rem;
+  width: 0.8rem;
+  height: calc(100% + 1rem);
+  background-color: var(--mono-main);
+  clip-path: polygon(
+    25% 0,
+    25% calc(100% - 0.4rem),
+    0 calc(100% - 0.4rem),
+    50% 100%,
+    100% calc(100% - 0.4rem),
+    75% calc(100% - 0.4rem),
+    75% 0
+  );
+}
+summary.mono:focus:before,
+.mono-all summary:focus:before {
+  left: -1.5rem;
+  width: 1.2rem;
+  background-color: transparent;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 4px
+  );
+  clip-path: none;
+}
+summary.mono:active:before,
+.mono-all summary:active:before {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 7px
+  );
+}
+
+ul.mono,
+.mono-all ul {
+  padding-left: 1.5rem;
 }
