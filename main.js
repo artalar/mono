@@ -7,25 +7,29 @@ extend([a11yPlugin]);
 
 let isSync = true;
 
-document
-  .getElementById("colorpicker-main")
-  .addEventListener("input", (event) => {
-    const main = colord(event.target.value);
-    const back = contrast(main);
+const pickerMain = document.getElementById("colorpicker-main");
+pickerMain.addEventListener("input", (event) => {
+  const main = colord(event.target.value);
+  const back = contrast(main);
 
-    document.body.style.setProperty("--mono-main", main.toHex());
-    if (isSync) document.body.style.setProperty("--mono-back", back.toHex());
-  });
-
-document
-  .getElementById("colorpicker-back")
-  .addEventListener("input", (event) => {
-    const back = colord(event.target.value);
-    const main = contrast(back);
-
+  document.body.style.setProperty("--mono-main", main.toHex());
+  if (isSync) {
     document.body.style.setProperty("--mono-back", back.toHex());
-    if (isSync) document.body.style.setProperty("--mono-main", main.toHex());
-  });
+    pickerBack.value = back.toHex();
+  }
+});
+
+const pickerBack = document.getElementById("colorpicker-back");
+pickerBack.addEventListener("input", (event) => {
+  const back = colord(event.target.value);
+  const main = contrast(back);
+
+  document.body.style.setProperty("--mono-back", back.toHex());
+  if (isSync) {
+    document.body.style.setProperty("--mono-main", main.toHex());
+    pickerMain.value = main.toHex();
+  }
+});
 
 document
   .getElementById("colorpicker-sync")
