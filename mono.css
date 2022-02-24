@@ -26,6 +26,7 @@ button.mono,
   cursor: pointer;
   outline: none;
   font-size: 1rem;
+  margin-top: 1rem;
   border: 0.4rem solid var(--mono-main);
   border-top: none;
   height: 2.5rem;
