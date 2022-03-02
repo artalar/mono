@@ -353,6 +353,16 @@ input[type="range"].mono:focus:after,
   );
 }
 
+fieldset.mono,
+.mono-all fieldset {
+  border: 0.2rem solid var(--mono-main);
+}
+
+legend.mono,
+.mono-all legend {
+  font-size: 1.2em;
+}
+
 li.mono,
 .mono-all li {
   list-style: none;
