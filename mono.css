@@ -106,12 +106,11 @@ button.mono,
   padding-bottom: 0.2rem;
   cursor: pointer;
   outline: none;
-  font-size: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  border: 0.4rem solid var(--mono-main);
+  margin-top: 0.4rem;
+  margin-bottom: 0.2rem;
+  border: 0.1rem solid var(--mono-main);
   border-top: none;
-  height: 2.5rem;
+  height: 2rem;
   min-width: 5rem;
   color: var(--mono-main);
   background-color: var(--mono-back);
@@ -124,8 +123,8 @@ button.mono:before,
 .mono-all button:before {
   content: "";
   position: absolute;
-  top: -0.8rem;
-  left: -0.4rem;
+  top: -0.4rem;
+  left: -0.1rem;
   width: calc(100% + 0.8rem);
   height: 0.8rem;
   background-color: var(--mono-main);
@@ -145,8 +144,8 @@ button.mono:focus:after,
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(100% + 1rem);
-  height: calc(100% + 1rem);
+  width: calc(100% + 0.6rem);
+  height: calc(100% + 0.6rem);
   background-image: repeating-linear-gradient(
     -45deg,
     transparent 0 3px,
