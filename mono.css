@@ -82,6 +82,39 @@ b.mono,
   border: 0.2rem solid var(--mono-main);
 }
 
+body.mono,
+body.mono-all,
+.mono-all body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+main.mono,
+.mono-all main {
+  margin: auto;
+  max-width: 75rem;
+  padding: 0 1rem;
+}
+
+aside.mono,
+.mono-all aside {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+footer.mono,
+.mono-all footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;;
+  border-top: 1px solid var(--mono-main);
+}
+
 blockquote.mono,
 .mono-all blockquote {
   position: relative;
@@ -104,7 +137,6 @@ button.mono,
 .mono-all button {
   position: relative;
   padding-bottom: 0.2rem;
-  cursor: pointer;
   outline: none;
   margin-top: 0.4rem;
   margin-bottom: 0.2rem;
@@ -125,7 +157,7 @@ button.mono:before,
   position: absolute;
   top: -0.4rem;
   left: -0.1rem;
-  width: calc(100% + 0.8rem);
+  width: calc(100% + 0.2rem);
   height: 0.8rem;
   background-color: var(--mono-main);
   clip-path: polygon(
@@ -277,7 +309,6 @@ input[type="color"].mono,
   position: relative;
   outline: none;
   height: 2.5rem;
-  cursor: pointer;
 }
 input[type="color"].mono:focus:after,
 .mono-all input[type="color"]:focus:after {
