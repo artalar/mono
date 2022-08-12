@@ -1,12 +1,12 @@
 # MONO - monotone css framework for semantic html
 
-## Instal for local development
+## Instalation
 
 ```
 npm i @artalar/mono
 ```
 
-## Paste a link to the heade
+Or
 
 ```
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@artalar/mono/mono.css">
@@ -23,4 +23,4 @@ There are two options (first the simple one).
 
 ### Change colors
 
-Use `--mono-main` and `--mono-back` css variables. You could use [our sandbox](https://monocss.vercel.app) to try different colors and get the contrast (with `sync` checkbox enabled)
+Use `--mono-main` and `--mono-back` css variables. You could use [our sandbox](https://monocss.vercel.app) to try different colors and get the contrast (with `sync` checkbox enabled).
