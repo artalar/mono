@@ -236,6 +236,7 @@ details.mono,
   padding: 1rem;
   padding-left: 2rem;
   border: 0.2rem solid var(--mono-main);
+  overflow-x: hidden;
 }
 details[open].mono summary.mono,
 .mono-all details[open] summary {
@@ -508,10 +509,11 @@ strong.mono,
 
 summary.mono,
 .mono-all summary {
+  display: inline;
   position: relative;
+  margin-right: 100%;
   list-style: none;
   font-size: 1.2rem;
-  cursor: pointer;
   outline: none;
 }
 summary.mono:before,
@@ -525,28 +527,38 @@ summary.mono:before,
   background-color: var(--mono-main);
   clip-path: polygon(
     25% 0,
-    25% calc(100% - 0.4rem),
-    0 calc(100% - 0.4rem),
+    25% calc(100% - 0.6rem),
+    0 calc(100% - 0.6rem),
     50% 100%,
-    100% calc(100% - 0.4rem),
-    75% calc(100% - 0.4rem),
+    100% calc(100% - 0.6rem),
+    75% calc(100% - 0.6rem),
     75% 0
   );
 }
-summary.mono:focus:before,
-.mono-all summary:focus:before {
-  left: -1.5rem;
-  width: 1.2rem;
-  background-color: transparent;
+summary.mono:focus:after,
+.mono-all summary:focus:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 0.8rem);
+  height: calc(100% + 0.4rem);
   background-image: repeating-linear-gradient(
     -45deg,
     transparent 0 3px,
     var(--mono-main) 3px 4px
   );
-  clip-path: none;
+  clip-path: polygon(
+    calc(100% - 0.5rem) 0.25rem,
+    calc(100% - 0.5rem) calc(100% - 0.5rem),
+    0.25rem calc(100% - 0.5rem),
+    0.25rem 100%,
+    100% 100%,
+    100% 0.25rem
+  );
 }
-summary.mono:active:before,
-.mono-all summary:active:before {
+summary.mono:active:after,
+.mono-all summary:active:after {
   background-image: repeating-linear-gradient(
     -45deg,
     transparent 0 3px,
