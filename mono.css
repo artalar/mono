@@ -31,6 +31,10 @@ a.mono,
   outline: none;
   border-bottom: 0.25rem solid var(--mono-main);
 }
+a.mono:visited,
+.mono-all a:visited {
+  border-bottom: 0.1rem solid var(--mono-main);
+}
 a.mono:after,
 .mono-all a:after {
   content: "00";
@@ -41,13 +45,6 @@ a.mono:after,
     75% 50%,
     25% 75%
   );
-}
-/* a.mono:visited,
-.mono-all a:visited {
-} */
-a.mono:focus,
-.mono-all a:focus {
-  border-color: transparent;
 }
 a.mono:focus:before,
 .mono-all a:focus:before {
