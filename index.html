@@ -211,40 +211,6 @@ html {
           </li>
         </ul>
       </section>
-      <!-- <section>
-        <h2 id="action">Action</h2>
-        <p>
-          Action is the intention of changing the state. Declared action is a
-          function that returns
-          <a href="https://github.com/redux-utilities/flux-standard-action"
-            >flux standard action</a
-          >:
-        </p>
-        <pre>
-import { declareAction } from '@reatom/core'
-
-const increment = declareAction()
-// usage
-store.dispatch(increment())
-// tests
-const stateNew = myAtom(stateOld, increment())</pre>
-        <blockquote>
-            <strong>NOTE</strong>. See FAQ on
-            <a href="/faq?id=why-declare">why declare*</a>
-        </blockquote>
-        <h3 id="action-payload">Action payload</h3>
-        <p>
-          Declared action is a function that accepts payload as the first
-          argument and returns object (action to store dispatcher) with shape:
-          <code>{ type, payload }</code>.
-        </p>
-        <pre>
-const add = declareAction()
-
-console.log(add(123))
-// { type: 'action #1', payload: 123 }
-</pre>
-      </section> -->
     </main>
     <footer><a href="https://t.me/artalar" target="_blank">@artalar</a></footer>
     <script type="module" src="/main.js"></script>

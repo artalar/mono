@@ -62,10 +62,10 @@ document.getElementById("colorinvert").addEventListener("click", (event) => {
 document.getElementById("colorreset").addEventListener("click", toDefault);
 
 function toDefault() {
-  document.body.style.setProperty("--mono-main", "#000000");
-  document.body.style.setProperty("--mono-back", "#ffffff");
-  pickerMain.value = "#000000";
-  pickerBack.value = "#ffffff";
+  document.body.style.setProperty("--mono-main", "#111111");
+  document.body.style.setProperty("--mono-back", "#dddddd");
+  pickerMain.value = "#111111";
+  pickerBack.value = "#dddddd";
 }
 
 function contrast(color) {
