@@ -1,15 +1,26 @@
 {
-  "name": "monotone.css",
-  "version": "0.0.0",
+  "name": "@artalar/mono",
+  "private": false,
+  "version": "1.0.0",
+  "description": "Monotone css framework for semantic html",
+  "source": "mono.css",
+  "main": "mono.css",
+  "style": "mono.css",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "vite"
   },
   "devDependencies": {
     "vite": "^2.8.4"
   },
   "dependencies": {
     "colord": "^2.9.2"
-  }
+  },
+  "files": [
+    "LICENSE.md",
+    "mono.css"
+  ],
+  "repository": "https://github.com/artalar/mono",
+  "license": "MIT",
+  "bugs": "https://github.com/artalar/mono/issues",
+  "homepage": "https://monocss.vercel.app"
 }
