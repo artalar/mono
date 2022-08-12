@@ -573,6 +573,23 @@ summary.mono:active:after,
   );
 }
 
+table.mono,
+.mono-all table {
+  display: block;
+  width: 100%;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+}
+
+td.mono,
+.mono-all td,
+th.mono,
+.mono-all th {
+  border-top: 0.5rem solid var(--mono-main);
+  padding: 0 1rem;
+}
+
 ul.mono,
 .mono-all ul {
   padding-left: 1.5rem;
