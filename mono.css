@@ -493,6 +493,7 @@ pre.mono,
 .mono-all pre {
   padding: 0.5rem 1rem;
   border: 2px dashed var(--mono-main);
+  overflow-x: scroll;
   line-height: 1.5rem;
 }
 
