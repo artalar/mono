@@ -6,6 +6,7 @@
   background-color: var(--mono-back);
   font-family: monospace;
   line-height: 2rem;
+  font-weight: 600;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -143,7 +144,7 @@ button.mono,
   outline: none;
   margin-top: 0.4rem;
   margin-bottom: 0.2rem;
-  border: 0.1rem solid var(--mono-main);
+  border: 0.2rem solid var(--mono-main);
   border-top: none;
   height: 2rem;
   min-width: 5rem;
@@ -159,8 +160,8 @@ button.mono:before,
   content: "";
   position: absolute;
   top: -0.4rem;
-  left: -0.1rem;
-  width: calc(100% + 0.2rem);
+  left: -0.2rem;
+  width: calc(100% + 0.4rem);
   height: 0.8rem;
   background-color: var(--mono-main);
   clip-path: polygon(
@@ -179,8 +180,8 @@ button.mono:focus:after,
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(100% + 0.6rem);
-  height: calc(100% + 0.6rem);
+  width: calc(100% + 0.8rem);
+  height: calc(100% + 0.8rem);
   background-image: repeating-linear-gradient(
     -45deg,
     transparent 0 3px,
