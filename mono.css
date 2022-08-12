@@ -6,7 +6,7 @@
   background-color: var(--mono-back);
   font-family: monospace;
   line-height: 2rem;
-  font-weight: 600;
+  font-weight: 800;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -82,7 +82,7 @@ a.mono:active:before,
 
 b.mono,
 .mono-all b {
-  font-weight: unset;
+  font-weight: 600;
   border: 0.2rem solid var(--mono-main);
 }
 
@@ -140,7 +140,6 @@ blockquote.mono:before,
 button.mono,
 .mono-all button {
   position: relative;
-  padding-bottom: 0.2rem;
   outline: none;
   margin-top: 0.4rem;
   margin-bottom: 0.2rem;
@@ -150,6 +149,7 @@ button.mono,
   min-width: 5rem;
   color: var(--mono-main);
   background-color: var(--mono-back);
+  font-weight: 600;
 }
 button.mono + button.mono,
 .mono-all button + button {
@@ -502,7 +502,7 @@ pre.mono,
 
 strong.mono,
 .mono-all strong {
-  font-weight: unset;
+  font-weight: 600;
   box-shadow: inset 0 -0.25em var(--mono-main), 0 0.5em 0 0 var(--mono-main);
 }
 
