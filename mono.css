@@ -2,10 +2,12 @@
 .mono-all {
   --mono-main: #000000;
   --mono-back: #ffffff;
-  font-family: monospace;
-  line-height: 2rem;
   color: var(--mono-main);
   background-color: var(--mono-back);
+  font-family: monospace;
+  line-height: 2rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .mono,
 .mono-all *,
