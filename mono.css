@@ -3,6 +3,7 @@
   --mono-main: #000000;
   --mono-back: #ffffff;
   font-family: monospace;
+  line-height: 2rem;
   color: var(--mono-main);
   background-color: var(--mono-back);
 }
@@ -493,6 +494,7 @@ pre.mono,
 .mono-all pre {
   padding: 0.5rem 1rem;
   border: 2px dashed var(--mono-main);
+  line-height: 1.5rem;
 }
 
 strong.mono,
