@@ -205,24 +205,24 @@ button.mono:active:after,
   );
 }
 
-code.mono,
-.mono-all code {
+:not(pre) > code.mono,
+.mono-all :not(pre) > code {
   border: 1px dashed var(--mono-main);
 }
-code.mono:before,
-.mono-all code:before {
+:not(pre) > code.mono:before,
+.mono-all :not(pre) > code:before {
   content: "<";
   margin-right: 0.5em;
 }
-code.mono:after,
-.mono-all code:after {
+:not(pre) > code.mono:after,
+.mono-all :not(pre) > code:after {
   content: ">";
   margin-left: 0.5em;
 }
-code.mono:before,
-.mono-all code:before,
-code.mono:after,
-.mono-all code:after {
+:not(pre) > code.mono:before,
+.mono-all :not(pre) > code:before,
+:not(pre) > code.mono:after,
+.mono-all :not(pre) > code:after {
   font-weight: bold;
   color: var(--mono-back);
   background-color: var(--mono-main);
