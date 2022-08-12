@@ -1,7 +1,7 @@
 {
   "name": "@artalar/mono",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Monotone css framework for semantic html",
   "source": "mono.css",
   "main": "mono.css",
