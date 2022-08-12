@@ -46,30 +46,33 @@ a.mono:after,
     25% 75%
   );
 }
-a.mono:focus:before,
-.mono-all a:focus:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(100% + 0.5rem);
-  height: calc(100% + 0.5rem);
+a.mono:after,
+.mono-all a:after {
+  content: "00";
+  color: transparent;
+  background-color: var(--mono-main);
+  clip-path: polygon(
+    25% 25%,
+    75% 50%,
+    25% 75%
+  );
+}
+a.mono:focus:after,
+.mono-all a:focus:after {
+  clip-path: polygon(
+    0 0,
+    100% 50%,
+    0 100%
+  );
+  background-color: unset;
   background-image: repeating-linear-gradient(
     -45deg,
     transparent 0 3px,
     var(--mono-main) 3px 5px
   );
-  clip-path: polygon(
-    calc(100% - 0.5rem) 0.25rem,
-    calc(100% - 0.5rem) calc(100% - 0.5rem),
-    0.25rem calc(100% - 0.5rem),
-    0.25rem 100%,
-    100% 100%,
-    100% 0.25rem
-  );
 }
-a.mono:active:before,
-.mono-all a:active:before {
+a.mono:active:after,
+.mono-all a:active:after {
   background-image: repeating-linear-gradient(
     -45deg,
     transparent 0 3px,
