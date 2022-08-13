@@ -245,6 +245,21 @@ h4.mono,
   padding-left: 0.3em;
 }
 
+h1.mono,
+.mono-all h1 {
+  font-size: 2em;
+}
+
+h2.mono,
+.mono-all h2 {
+  font-size: 1.6em;
+}
+
+h3.mono,
+.mono-all h3 {
+  font-size: 1.2em;
+}
+
 input[type="checkbox"].mono,
 .mono-all input[type="checkbox"] {
   position: relative;
