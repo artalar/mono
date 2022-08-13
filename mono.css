@@ -6,6 +6,7 @@
   font-family: monospace;
   line-height: 2rem;
   font-weight: 800;
+  font-size: 1.2rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -456,7 +457,7 @@ fieldset.mono,
 
 legend.mono,
 .mono-all legend {
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 
 li.mono,
@@ -509,7 +510,7 @@ summary.mono,
   position: relative;
   margin-right: 100%;
   list-style: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   outline: none;
 }
 summary.mono:before,
