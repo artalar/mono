@@ -1,32 +1,26 @@
-.mono-all {
-  --mono-main: #000000;
-  --mono-back: #ffffff;
-  color: var(--mono-main);
-  background-color: var(--mono-back);
-  font-family: monospace;
-  line-height: 2rem;
-  font-weight: 800;
-  font-size: 1.2rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.mono::selection,
-.mono-all *::selection {
-  color: var(--mono-back);
-  background-color: var(--mono-main);
-}
-
+.mono-all,
 .mono,
 .mono-all *,
 .mono:before,
 .mono-all *:before,
 .mono:after,
 .mono-all *:after {
-  box-sizing: border-box;
+  color: var(--mono-main, #111111);
+  background-color: var(--mono-back, #eeeeee);
   font-family: monospace;
+  line-height: 2rem;
+  font-weight: 800;
+  font-size: 1.2rem;
+  box-sizing: border-box;
 
-  color: var(--mono-main);
-  background-color: var(--mono-back);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mono::selection,
+.mono-all *::selection {
+  color: var(--mono-back);
+  background-color: var(--mono-main);
 }
 
 a.mono,

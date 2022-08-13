@@ -6,7 +6,7 @@ import "./mono.css";
 extend([a11yPlugin]);
 
 const DEFAULT_MAIN = "#111111";
-const DEFAULT_BACK = "#dddddd";
+const DEFAULT_BACK = "#eeeeee";
 
 const MEDIA_DARK = "(prefers-color-scheme: dark)";
 const MEDIA_LIGHT = "(prefers-color-scheme: light)";
