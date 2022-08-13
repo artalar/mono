@@ -80,12 +80,15 @@ body.mono-all,
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  height: 100vh;
+  overflow: auto;
   margin: 0;
 }
 
 main.mono,
 .mono-all main {
-  margin: auto;
+  margin: 0 auto;
+  min-width: 80vw;
   max-width: 75rem;
   padding: 0 1rem;
 }
@@ -103,6 +106,7 @@ footer.mono,
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: auto;
   padding: 1rem;
   border-top: 1px solid var(--mono-main);
 }

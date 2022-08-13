@@ -28,9 +28,9 @@ function detectColorScheme() {
     }
   }
   const mqDark = window.matchMedia(MEDIA_DARK);
-  mqDark.addEventListener("change", listener);
+  mqDark?.addEventListener("change", listener);
   const mqLight = window.matchMedia(MEDIA_LIGHT);
-  mqLight.addEventListener("change", listener);
+  mqLight?.addEventListener("change", listener);
 }
 
 function changeWebsiteTheme(main, back) {
@@ -43,7 +43,7 @@ function changeWebsiteTheme(main, back) {
 let isSync = true;
 
 const pickerMain = document.getElementById("colorpicker-main");
-pickerMain.addEventListener("input", (event) => {
+pickerMain?.addEventListener("input", (event) => {
   const main = colord(event.target.value);
   const back = contrast(main);
 
@@ -55,7 +55,7 @@ pickerMain.addEventListener("input", (event) => {
 });
 
 const pickerBack = document.getElementById("colorpicker-back");
-pickerBack.addEventListener("input", (event) => {
+pickerBack?.addEventListener("input", (event) => {
   const back = colord(event.target.value);
   const main = contrast(back);
 
@@ -68,11 +68,11 @@ pickerBack.addEventListener("input", (event) => {
 
 document
   .getElementById("colorpicker-sync")
-  .addEventListener("input", (event) => {
+  ?.addEventListener("input", (event) => {
     isSync = event.target.checked;
   });
 
-document.getElementById("colormix").addEventListener("click", (event) => {
+document.getElementById("colormix")?.addEventListener("click", (event) => {
   const main = colord(
     `hsl(${random(360)}, ${random(100, 20)}%, ${random(90, 10)}%)`
   );
@@ -81,14 +81,14 @@ document.getElementById("colormix").addEventListener("click", (event) => {
   changeWebsiteTheme(main.toHex(), back.toHex());
 });
 
-document.getElementById("colorinvert").addEventListener("click", (event) => {
+document.getElementById("colorinvert")?.addEventListener("click", (event) => {
   const back = document.body.style.getPropertyValue("--mono-main");
   const main = document.body.style.getPropertyValue("--mono-back");
 
   changeWebsiteTheme(main, back);
 });
 
-document.getElementById("colorreset").addEventListener("click", toDefault);
+document.getElementById("colorreset")?.addEventListener("click", toDefault);
 
 function toDefault() {
   window.matchMedia(MEDIA_DARK).matches

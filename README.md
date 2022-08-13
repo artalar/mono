@@ -14,12 +14,17 @@ Or
 
 ## Usage
 
-### Setup
+### Setup docs site
+
 
 There are two options (first the simple one).
 
 1. Add `mono-all` class to the root (body) of your site and write semantic html
 2. Add `mono` class to needed semantic elements
+
+### Template
+
+Create html file and fill it like [this](https://github.com/artalar/mono/blob/main/404.html), then paste all you content (`.md` generator output) to the `main` tag. Change navigation and footer as you need.
 
 ### Change colors
 
