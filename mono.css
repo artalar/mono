@@ -10,6 +10,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.mono::selection,
+.mono-all *::selection {
+  color: var(--mono-back);
+  background-color: var(--mono-main);
+}
+
 .mono,
 .mono-all *,
 .mono:before,
