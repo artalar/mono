@@ -1,5 +1,14 @@
 # MONO - monotone css framework for semantic html
 
+## Motivation and goals
+
+The main purpose of this design is document or blog sites, the classic web.
+
+- communicate with a user through forms rather than colors, which is more obvious and accessible
+- get a unique design, away from boring standards
+- possibility to apply any color you need for branding
+- use only semantic selectors, no component classes to force a native platform and a11y
+
 ## Instalation
 
 ```
