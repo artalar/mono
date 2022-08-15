@@ -39,6 +39,15 @@ Create html file and fill it like [this](https://github.com/artalar/mono/blob/ma
 
 Use `--mono-main` and `--mono-back` css variables. You could use [our sandbox](https://monocss.vercel.app) to try different colors and get the contrast (with `sync` checkbox enabled).
 
+## Roadmap
+
+- add styles to input elements and it variations
+- add styles to the rest html elements
+- use consistent sizings by css variables
+- fix cross-browser issues
+
+PR welcome!
+
 ## Inspiration
 
 - https://every-layout.dev/
