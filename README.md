@@ -38,3 +38,9 @@ Create html file and fill it like [this](https://github.com/artalar/mono/blob/ma
 ### Change colors
 
 Use `--mono-main` and `--mono-back` css variables. You could use [our sandbox](https://monocss.vercel.app) to try different colors and get the contrast (with `sync` checkbox enabled).
+
+## Inspiration
+
+- https://every-layout.dev/
+- https://yegor256.github.io/tacit/
+- https://codehipsters.com/
