@@ -43,6 +43,7 @@ Use `--mono-main` and `--mono-back` css variables. You could use [our sandbox](h
 
 - add styles to input elements and it variations
 - add styles to the rest html elements
+- fix design consistance
 - use consistent sizings by css variables
 - fix cross-browser issues
 
