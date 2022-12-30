@@ -1,3 +1,5 @@
+/* Copied from the origin (https://github.com/artalar/mono) for fast interaction and fixing. Reatom docs is a good playground form mono. */
+
 .mono-all,
 .mono,
 .mono-all *,
@@ -7,8 +9,8 @@
 .mono-all *:after {
   color: var(--mono-main, #111111);
   background-color: var(--mono-back, #eeeeee);
-  font-family: 'Roboto Mono', monospace;
-  line-height: 2rem;
+  font-family: "Roboto Mono", monospace;
+  line-height: 2.5rem;
   font-size: 1.2rem;
   box-sizing: border-box;
 
@@ -30,6 +32,10 @@ a.mono,
   outline: none;
   border-bottom: 0.25rem solid var(--mono-main);
 }
+a.mono:hover,
+.mono-all a:hover {
+  border-bottom-width: 0.5rem;
+}
 a.mono:visited,
 .mono-all a:visited {
   border-bottom: 0.1rem solid var(--mono-main);
@@ -41,16 +47,19 @@ a.mono:after,
   background-color: var(--mono-main);
   clip-path: polygon(25% 25%, 75% 50%, 25% 75%);
 }
-a.mono:after,
-.mono-all a:after {
-  content: "00";
-  color: transparent;
-  background-color: var(--mono-main);
-  clip-path: polygon(25% 25%, 75% 50%, 25% 75%);
-}
 a.mono:focus:after,
 .mono-all a:focus:after {
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  clip-path: polygon(
+    0 0,
+    20% 20%,
+    20% 80%,
+    80% 50%,
+    20% 20%,
+    0 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
   background-color: unset;
   background-image: repeating-linear-gradient(
     -45deg,
@@ -76,30 +85,37 @@ b.mono,
 body.mono,
 body.mono-all,
 .mono-all body {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: 100vh;
-  overflow: auto;
   margin: 0;
+  position: relative;
+  min-width: min(calc(100vw + 20rem), 85rem);
+  scroll-snap-type: x mandatory;
+  display: flex;
 }
 
 main.mono,
 .mono-all main {
-  margin: 0 auto;
-  min-width: 80vw;
-  max-width: 75rem;
+  scroll-snap-align: start;
+  margin: auto;
+  width: min(100vw, 65rem);
+  display: flex;
+  flex-direction: column;
   padding: 0 1rem;
 }
 
 aside.mono,
 .mono-all aside {
+  position: sticky;
+  top: 0;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  width: 20rem;
+  min-width: 20rem;
+  max-width: 20rem;
+  max-height: 100vh;
+  overflow-y: scroll;
   padding: 1rem;
 }
-
+/* TODO: stick it bottom */
 footer.mono,
 .mono-all footer {
   width: 100%;
@@ -114,18 +130,29 @@ blockquote.mono,
 .mono-all blockquote {
   position: relative;
   margin: 2rem;
+  margin-left: 3rem;
 }
 blockquote.mono:before,
 .mono-all blockquote:before {
   content: "";
   position: absolute;
   top: 0;
-  left: -0.5rem;
+  left: 0;
   height: 1rem;
   width: 3rem;
-  background-color: transparent;
-  box-shadow: -0.5rem -0.8rem 0 0.1rem var(--mono-main),
-    -0.2rem -0.5rem 0 0.1rem var(--mono-main);
+  background-color: var(--mono-main);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 0.25rem) 0,
+    calc(100% - 0.25rem) 0.25rem,
+    100% 0.25rem,
+    100% calc(100% - 0.25rem),
+    1rem calc(100% - 0.25rem),
+    1rem 100%,
+    0.25rem 100%,
+    0.25rem calc(100% - 0.25rem),
+    0 calc(100% - 0.25rem)
+  );
 }
 
 button.mono,
@@ -141,6 +168,9 @@ button.mono,
   color: var(--mono-main);
   background-color: var(--mono-back);
   font-weight: 600;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 button.mono + button.mono,
 .mono-all button + button {
@@ -199,16 +229,7 @@ button.mono:active:after,
 :not(pre) > code.mono,
 .mono-all :not(pre) > code {
   border: 1px dashed var(--mono-main);
-}
-:not(pre) > code.mono:before,
-.mono-all :not(pre) > code:before {
-  content: "<";
-  margin-right: 0.5em;
-}
-:not(pre) > code.mono:after,
-.mono-all :not(pre) > code:after {
-  content: ">";
-  margin-left: 0.5em;
+  padding: 0 0.25rem;
 }
 :not(pre) > code.mono:before,
 .mono-all :not(pre) > code:before,
@@ -219,19 +240,25 @@ button.mono:active:after,
   background-color: var(--mono-main);
   /* fix empty space when scale */
   box-shadow: 0 0 0 1px var(--mono-main);
+  /* FIXME: does not work */
+  transform: scaleX(0.5);
 }
 
 details.mono,
 .mono-all details {
   margin: 1rem 0;
   padding: 1rem;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
   border: 0.2rem solid var(--mono-main);
   overflow-x: hidden;
 }
 details[open].mono summary.mono,
 .mono-all details[open] summary {
   margin-bottom: 0.5rem;
+}
+details[open].mono summary.mono::before,
+.mono-all details[open] summary::before {
+  transform: rotate(180deg);
 }
 
 h1.mono,
@@ -246,11 +273,13 @@ h4.mono,
   border-top: 2px solid var(--mono-main);
   padding-top: 0.2em;
   padding-left: 0.3em;
+  margin: 3rem 0 1rem;
 }
 
 h1.mono,
 .mono-all h1 {
-  font-size: 2em;
+  margin-top: 2rem;
+  font-size: 2.2em;
 }
 
 h2.mono,
@@ -491,35 +520,69 @@ li.mono:before,
 .mono-all li:before {
   content: "";
   position: absolute;
-  top: 0.5rem;
+  top: 0.75rem;
   left: -1.5rem;
   width: 1rem;
   height: 1rem;
   color: var(--mono-back);
   background-color: var(--mono-main);
-  box-shadow: 0.4rem -0.4rem 0 -0.1rem var(--mono-main);
+  /* box-shadow: 0.4rem -0.4rem 0 -0.1rem var(--mono-main); */
 }
 
-p.mono:first-letter,
-.mono-all p:first-letter {
-  color: var(--mono-back);
-  background-color: var(--mono-main);
-  margin-left: 0.5rem;
-  box-shadow: -0.5em 0.25em 0 -0em var(--mono-main);
+p.mono:before,
+.mono-all p:before {
+  content: " ";
+  width: 1.5rem;
+  display: inline-block;
 }
 
 pre.mono,
 .mono-all pre {
+  position: relative;
+  flex-shrink: 0;
   padding: 0.5rem 1rem;
+  margin: 1.5rem 0;
   border: 2px dashed var(--mono-main);
   overflow-x: scroll;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
+
+pre.mono,
+pre.mono *,
+.mono-all pre,
+.mono-all pre * {
+  line-height: 2rem;
+  background-color: transparent;
+}
+
+/* pre.mono:hover:before,
+.mono-all pre:hover:before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--mono-main);
+  opacity: 0.7;
+  clip-path: polygon(
+    0 0,
+    0 65%,
+    65% 65%,
+    65% 0,
+    100% 0,
+    100% 100%,
+    35% 100%,
+    35% 35%,
+    100% 35%,
+    100% 0
+  );
+} */
 
 strong.mono,
 .mono-all strong {
-  font-weight: 600;
-  box-shadow: inset 0 -0.2em var(--mono-main), 0 0.4em 0 0 var(--mono-main);
+  font-weight: normal;
+  box-shadow: inset 0 -0.2em var(--mono-main), 0 0.25em 0 0 var(--mono-main);
 }
 
 summary.mono,
@@ -536,7 +599,7 @@ summary.mono:before,
   content: "";
   position: absolute;
   top: -0.5rem;
-  left: -1.4rem;
+  left: -1.2rem;
   width: 0.8rem;
   height: calc(100% + 1rem);
   background-color: var(--mono-main);

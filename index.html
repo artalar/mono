@@ -9,22 +9,23 @@
   </head>
   <body class="mono-all">
     <aside>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="https://github.com/artalar/mono" target="_blank">Github</a>
-        </li>
-        <li>
-          <a href="/404.html">404</a>
-        </li>
-      </ul>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/artalar/mono" target="_blank">Github</a>
+          </li>
+          <li>
+            <a href="/404.html">404</a>
+          </li>
+        </ul>
+      </nav>
     </aside>
     <main>
       <h1>mono - Brutalism in UI</h1>
       <input id="colorpicker-back" type="color" />
-      <br />
       <label>
         <input
           id="colorpicker-sync"
@@ -34,27 +35,31 @@
         />
         sync</label
       >
-      <br />
       <input id="colorpicker-main" type="color" />
       <br />
-      <br />
-      <button id="colormix" style="width: 7rem">mix</button>
-      <button id="colorinvert" style="width: 7rem">invert</button>
-      <button id="colorreset" style="width: 7rem">reset</button>
+      <span
+        ><button id="colormix" style="width: 7rem">mix</button>
+        <button id="colorinvert" style="width: 7rem">invert</button>
+        <button id="colorreset" style="width: 7rem">reset</button></span
+      >
       <section>
         <header>
           <h2 id="blockquote">Blockquote</h2>
         </header>
         <blockquote>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.<br />Lorem Ipsum has been the industry's standard dummy text
-          ever since the 1500s.
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.<br />Lorem Ipsum has been the industry's standard dummy
+            text ever since the 1500s.
+          </p>
         </blockquote>
-        <blockquote>blockquote?</blockquote>
+        <blockquote><p>blockquote?</p></blockquote>
         <blockquote>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s
+          </p>
         </blockquote>
       </section>
       <section>
@@ -248,8 +253,10 @@ html {
           </tr>
         </table>
       </section>
+      <footer>
+        <a href="https://t.me/artalar" target="_blank">@artalar</a>
+      </footer>
     </main>
-    <footer><a href="https://t.me/artalar" target="_blank">@artalar</a></footer>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
