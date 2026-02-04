@@ -1,0 +1,25 @@
+/* Copied from the origin (https://github.com/artalar/mono) for fast interaction and fixing. Reatom docs is a good playground form mono. */
+
+.mono-all,
+.mono,
+.mono-all *,
+.mono:before,
+.mono-all *:before,
+.mono:after,
+.mono-all *:after {
+  color: var(--mono-main, #111111);
+  background-color: var(--mono-back, #eeeeee);
+  font-family: "Roboto Mono", monospace;
+  line-height: 2.5rem;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mono::selection,
+.mono-all *::selection {
+  color: var(--mono-back);
+  background-color: var(--mono-main);
+}

@@ -1,0 +1,70 @@
+button.mono,
+.mono-all button {
+  position: relative;
+  outline: none;
+  margin-top: 0.4rem;
+  margin-bottom: 0.2rem;
+  border: 0.2rem solid var(--mono-main);
+  border-top: none;
+  height: 2rem;
+  min-width: 5rem;
+  color: var(--mono-main);
+  background-color: var(--mono-back);
+  font-weight: 600;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+button.mono + button.mono,
+.mono-all button + button {
+  margin-left: 1rem;
+}
+button.mono:before,
+.mono-all button:before {
+  content: "";
+  position: absolute;
+  top: -0.4rem;
+  left: -0.2rem;
+  width: calc(100% + 0.4rem);
+  height: 0.8rem;
+  background-color: var(--mono-main);
+  clip-path: polygon(
+    0 30%,
+    calc(100% - 0.8rem) 30%,
+    calc(100% - 0.8rem) 0%,
+    100% 50%,
+    calc(100% - 0.8rem) 100%,
+    calc(100% - 0.8rem) 70%,
+    0 70%
+  );
+}
+button.mono:focus:after,
+.mono-all button:focus:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 0.8rem);
+  height: calc(100% + 0.8rem);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 5px
+  );
+  clip-path: polygon(
+    calc(100% - 0.5rem) 0.25rem,
+    calc(100% - 0.5rem) calc(100% - 0.5rem),
+    0.25rem calc(100% - 0.5rem),
+    0.25rem 100%,
+    100% 100%,
+    100% 0.25rem
+  );
+}
+button.mono:active:after,
+.mono-all button:active:after {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 7px
+  );
+}

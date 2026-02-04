@@ -1,0 +1,5 @@
+b.mono,
+.mono-all b {
+  font-weight: 600;
+  border: 0.2rem solid var(--mono-main);
+}
