@@ -1,5 +1,7 @@
 input[type="checkbox"].mono,
 .mono-all input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
   position: relative;
   top: 0.5em;
   margin: 0;
@@ -7,8 +9,9 @@ input[type="checkbox"].mono,
   height: 1.5rem;
   margin-right: 0.5rem;
   margin-bottom: 1rem;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 1rem var(--mono-main);
+  border: 0.2rem solid var(--mono-main);
+  border-radius: 0;
+  background-color: var(--mono-back);
   outline: none;
   cursor: pointer;
 }
@@ -16,16 +19,16 @@ input[type="checkbox"].mono:before,
 .mono-all input[type="checkbox"]:before {
   position: absolute;
   content: "";
-  left: 0.125rem;
-  top: 0.125rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  background-color: var(--mono-back);
-  border: 0.25rem solid var(--mono-back);
+  left: 0.2rem;
+  top: 0.2rem;
+  width: calc(100% - 0.4rem);
+  height: calc(100% - 0.4rem);
+  background-color: var(--mono-main);
+  opacity: 0;
 }
 input[type="checkbox"].mono:checked:before,
 .mono-all input[type="checkbox"]:checked:before {
-  background-color: var(--mono-main);
+  opacity: 1;
 }
 input[type="checkbox"].mono:focus:after,
 .mono-all input[type="checkbox"]:focus:after {
