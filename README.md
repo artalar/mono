@@ -1,5 +1,7 @@
 # MONO - monotone css framework for semantic html
 
+Live showcase: https://monocss.vercel.app
+
 ## Motivation and goals
 
 The main purpose of this design is document or blog sites, the classic web.
@@ -37,14 +39,31 @@ Create html file and fill it like [this](https://github.com/artalar/mono/blob/ma
 
 ### Change colors
 
-Use `--mono-main` and `--mono-back` css variables. You could use [our sandbox](https://monocss.vercel.app) to try different colors and get the contrast (with `sync` checkbox enabled).
+Use `--mono-main` and `--mono-back` css variables. The [Storybook showcase](https://monocss.vercel.app) includes examples you can use to test combinations.
 
 ## Development
 
 - `npm run build:css` rebuilds `mono.css` from the component styles.
-- `npm run test` runs the screenshot suite.
-- `npm run test:update` records new baselines.
-- After each task: run tests, update screenshots when needed, and commit the new screenshot files.
+- `npm run storybook` starts the showcase and component catalog.
+- `npm run build-storybook` builds the static Storybook site.
+- `npm run test` runs Storybook interaction and accessibility tests in Vitest.
+- `npm run test:watch` runs Storybook tests in watch mode.
+
+## Storybook deployment
+
+Storybook is deployed directly by Vercel through the repository integration.
+
+- Pull requests get Vercel preview deployments.
+- `main` updates production at https://monocss.vercel.app.
+- `vercel.json` defines the build pipeline (`npm run build-storybook`) and output directory (`storybook-static`).
+- Runtime expectation is Node.js `24.x` (`package.json` engines and `.nvmrc`).
+- In Vercel Project Settings, set **Node.js Version** to `24.x`.
+
+## Storybook information architecture
+
+- `Overview/Home` keeps the original landing page as the entry point.
+- `Components/*` contains one or more stories for every MONO style part.
+- Storybook preview applies `mono-all` and default brand variables on the iframe `body`.
 
 ## Roadmap
 
