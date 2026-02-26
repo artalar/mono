@@ -1,0 +1,17 @@
+::not(pre) > code.mono,
+.mono-all :not(pre) > code {
+  border: 1px dashed var(--mono-main);
+  padding: 0 0.25rem;
+}
+::not(pre) > code.mono:before,
+.mono-all :not(pre) > code:before,
+::not(pre) > code.mono:after,
+.mono-all :not(pre) > code:after {
+  font-weight: bold;
+  color: var(--mono-back);
+  background-color: var(--mono-main);
+  /* fix empty space when scale */
+  box-shadow: 0 0 0 1px var(--mono-main);
+  /* FIXME: does not work */
+  transform: scaleX(0.5);
+}

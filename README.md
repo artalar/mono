@@ -39,6 +39,12 @@ Create html file and fill it like [this](https://github.com/artalar/mono/blob/ma
 
 Use `--mono-main` and `--mono-back` css variables. You could use [our sandbox](https://monocss.vercel.app) to try different colors and get the contrast (with `sync` checkbox enabled).
 
+## Development
+
+- `npm run build:css` rebuilds `mono.css` from the component styles.
+- `npm run test` runs the screenshot suite.
+- `npm run test:update` records new baselines.
+
 ## Roadmap
 
 - add styles to input elements and it variations

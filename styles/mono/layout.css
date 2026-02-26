@@ -1,0 +1,43 @@
+body.mono,
+body.mono-all,
+.mono-all body {
+  margin: 0;
+  position: relative;
+  min-width: min(calc(100vw + 20rem), 85rem);
+  scroll-snap-type: x mandatory;
+  display: flex;
+}
+
+main.mono,
+.mono-all main {
+  scroll-snap-align: start;
+  margin: auto;
+  width: min(100vw, 65rem);
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+aside.mono,
+.mono-all aside {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  min-width: 20rem;
+  max-width: 20rem;
+  max-height: 100vh;
+  overflow-y: scroll;
+  padding: 1rem;
+}
+/* TODO: stick it bottom */
+footer.mono,
+.mono-all footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding: 1rem;
+  border-top: 1px solid var(--mono-main);
+}

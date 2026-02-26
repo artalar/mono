@@ -1,0 +1,7 @@
+td.mono,
+.mono-all td,
+th.mono,
+.mono-all th {
+  border-top: 0.5rem solid var(--mono-main);
+  padding: 0 1rem;
+}

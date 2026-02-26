@@ -1,0 +1,55 @@
+input[type="radio"].mono,
+.mono-all input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  top: 0.5em;
+  margin: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  border: 0.2rem solid var(--mono-main);
+  background-color: var(--mono-back);
+  outline: none;
+  cursor: pointer;
+}
+input[type="radio"].mono:before,
+.mono-all input[type="radio"]:before {
+  position: absolute;
+  content: "";
+  left: 0.2rem;
+  top: 0.2rem;
+  width: calc(100% - 0.4rem);
+  height: calc(100% - 0.4rem);
+  background-color: var(--mono-main);
+  border-radius: 50%;
+  opacity: 0;
+}
+input[type="radio"].mono:checked:before,
+.mono-all input[type="radio"]:checked:before {
+  opacity: 1;
+}
+input[type="radio"].mono:focus:after,
+.mono-all input[type="radio"]:focus:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 0.4rem);
+  height: calc(100% + 0.4rem);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 2px,
+    var(--mono-main) 2px 3px
+  );
+  clip-path: polygon(
+    calc(100% - 0.4rem) 0.2rem,
+    calc(100% - 0.4rem) calc(100% - 0.4rem),
+    0.2rem calc(100% - 0.4rem),
+    0.2rem 100%,
+    100% 100%,
+    100% 0.2rem
+  );
+}

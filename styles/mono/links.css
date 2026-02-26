@@ -1,0 +1,51 @@
+a.mono,
+.mono-all a {
+  position: relative;
+  /* margin-right: 0.5rem; */
+  text-decoration: none;
+  outline: none;
+  border-bottom: 0.25rem solid var(--mono-main);
+}
+a.mono:hover,
+.mono-all a:hover {
+  border-bottom-width: 0.5rem;
+}
+a.mono:visited,
+.mono-all a:visited {
+  border-bottom: 0.1rem solid var(--mono-main);
+}
+a.mono:after,
+.mono-all a:after {
+  content: "00";
+  color: transparent;
+  background-color: var(--mono-main);
+  clip-path: polygon(25% 25%, 75% 50%, 25% 75%);
+}
+a.mono:focus:after,
+.mono-all a:focus:after {
+  clip-path: polygon(
+    0 0,
+    20% 20%,
+    20% 80%,
+    80% 50%,
+    20% 20%,
+    0 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+  background-color: unset;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 5px
+  );
+}
+a.mono:active:after,
+.mono-all a:active:after {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 7px
+  );
+}

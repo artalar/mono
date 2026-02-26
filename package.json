@@ -7,9 +7,13 @@
   "main": "mono.css",
   "style": "mono.css",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "build:css": "node scripts/build-css.mjs",
+    "test": "playwright test",
+    "test:update": "playwright test --update-snapshots"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.1",
     "vite": "^2.8.4"
   },
   "dependencies": {

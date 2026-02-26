@@ -1,0 +1,6 @@
+p.mono:before,
+.mono-all p:before {
+  content: " ";
+  width: 1.5rem;
+  display: inline-block;
+}

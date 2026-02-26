@@ -1,0 +1,36 @@
+input[type="color"].mono,
+.mono-all input[type="color"] {
+  position: relative;
+  outline: none;
+  height: 2.5rem;
+}
+input[type="color"].mono:focus:after,
+.mono-all input[type="color"]:focus:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 0.6rem);
+  height: calc(100% + 0.6rem);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 5px
+  );
+  clip-path: polygon(
+    calc(100% - 0.5rem) 0.25rem,
+    calc(100% - 0.5rem) calc(100% - 0.5rem),
+    0.25rem calc(100% - 0.5rem),
+    0.25rem 100%,
+    100% 100%,
+    100% 0.25rem
+  );
+}
+input[type="color"].mono:active:after,
+.mono-all input[type="color"]:active:after {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    var(--mono-main) 3px 7px
+  );
+}

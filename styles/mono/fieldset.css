@@ -1,0 +1,4 @@
+fieldset.mono,
+.mono-all fieldset {
+  border: 0.2rem solid var(--mono-main);
+}
