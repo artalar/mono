@@ -6,12 +6,22 @@ const monoCssPath = path.resolve(__dirname, "..", "mono.css");
 let monoCss = "";
 
 const wrapperStyles = `
-body { margin: 0; background: #eeeeee; }
+body {
+  margin: 0;
+  background: #eeeeee;
+  --mono-main: #111111;
+  --mono-back: #eeeeee;
+}
 .component-root { padding: 24px; display: inline-block; }
 `.trim();
 
 const bodyStyles = `
-body { margin: 0; background: #eeeeee; }
+body {
+  margin: 0;
+  background: #eeeeee;
+  --mono-main: #111111;
+  --mono-back: #eeeeee;
+}
 `.trim();
 
 const createWrapperHtml = (markup) => `<!DOCTYPE html>
