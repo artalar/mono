@@ -63,6 +63,7 @@ Storybook is deployed directly by Vercel through the repository integration.
 
 - `Overview/Home` keeps the original landing page as the entry point.
 - `Components/*` contains one or more stories for every MONO style part.
+- Storybook preview applies `mono-all` and default brand variables on the iframe `body`.
 
 ## Roadmap
 
