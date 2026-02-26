@@ -51,13 +51,11 @@ Use `--mono-main` and `--mono-back` css variables. The [Storybook showcase](http
 
 ## Storybook deployment
 
-GitHub Actions deploys Storybook to Vercel from `main` and keeps https://monocss.vercel.app on the latest Storybook build.
+Storybook is deployed directly by Vercel through the repository integration.
 
-Repository secrets required by the workflow:
-
-- `VERCEL_TOKEN`
-- `VERCEL_ORG_ID`
-- `VERCEL_PROJECT_ID`
+- Pull requests get Vercel preview deployments.
+- `main` updates production at https://monocss.vercel.app.
+- `vercel.json` defines the build pipeline (`npm run build-storybook`) and output directory (`storybook-static`).
 
 ## Roadmap
 
