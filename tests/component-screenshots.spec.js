@@ -79,6 +79,20 @@ const fieldsetMarkup = `
 </fieldset>
 `.trim();
 
+const checkboxMarkup = `
+<label for="checkbox-control">
+  <input id="checkbox-control" type="checkbox" checked />
+  Checked
+</label>
+`.trim();
+
+const radioMarkup = `
+<label for="radio-control">
+  <input id="radio-control" type="radio" name="radio-control" checked />
+  Selected
+</label>
+`.trim();
+
 const headingsMarkup = `
 <h1>Heading 1</h1>
 <h2>Heading 2</h2>
@@ -86,11 +100,88 @@ const headingsMarkup = `
 <h4>Heading 4</h4>
 `.trim();
 
+const resolveLocator = (page, selector, nth) => {
+  const locator = page.locator(selector);
+  return nth === undefined ? locator : locator.nth(nth);
+};
+
+const setCheckedState = async (target, checked) => {
+  await target.evaluate((element, value) => {
+    if (!(element instanceof HTMLInputElement)) {
+      return;
+    }
+    element.checked = value;
+    element.dispatchEvent(new Event("input", { bubbles: true }));
+    element.dispatchEvent(new Event("change", { bubbles: true }));
+  }, checked);
+};
+
+const setDetailsOpenState = async (target, open) => {
+  await target.evaluate((element, value) => {
+    if (element instanceof HTMLDetailsElement) {
+      element.open = value;
+    }
+  }, open);
+};
+
+const stateHandlers = {
+  default: async () => undefined,
+  hover: async ({ target }) => {
+    await target.hover();
+    return undefined;
+  },
+  focus: async ({ target }) => {
+    await target.focus();
+    return undefined;
+  },
+  active: async ({ page, target }) => {
+    const bounds = await target.boundingBox();
+    if (!bounds) {
+      throw new Error("Unable to resolve active state bounds.");
+    }
+    const centerX = bounds.x + bounds.width / 2;
+    const centerY = bounds.y + bounds.height / 2;
+    await page.mouse.move(centerX, centerY);
+    await page.mouse.down();
+    return async () => {
+      await page.mouse.up();
+    };
+  },
+  checked: async ({ target }) => {
+    await setCheckedState(target, true);
+    return undefined;
+  },
+  unchecked: async ({ target }) => {
+    await setCheckedState(target, false);
+    return undefined;
+  },
+  open: async ({ target }) => {
+    await setDetailsOpenState(target, true);
+    return undefined;
+  },
+  closed: async ({ target }) => {
+    await setDetailsOpenState(target, false);
+    return undefined;
+  }
+};
+
+const applyState = async (state, context) => {
+  const handler = stateHandlers[state];
+  if (!handler) {
+    throw new Error(`Unknown screenshot state: ${state}`);
+  }
+  return handler(context);
+};
+
+const screenshotName = (componentName, state) =>
+  state === "default" ? `${componentName}.png` : `${componentName}-${state}.png`;
+
 const components = [
   {
     name: "anchor",
-    markup: `<a href="https://example.com">Link</a>`,
-    selector: "a"
+    markup: `<a href="#">Link</a>`,
+    selector: "a",
+    states: ["default", "hover", "focus", "active"]
   },
   {
     name: "bold",
@@ -105,12 +196,15 @@ const components = [
   {
     name: "button",
     markup: `<button type="button">Ok</button>`,
-    selector: "button"
+    selector: "button",
+    states: ["default", "focus", "active"]
   },
   {
     name: "checkbox",
-    markup: `<label><input type="checkbox" checked /> Checked</label>`,
-    selector: 'input[type="checkbox"]'
+    markup: checkboxMarkup,
+    selector: 'input[type="checkbox"]',
+    captureSelector: "label",
+    states: ["default", "unchecked", "focus", "active"]
   },
   {
     name: "code",
@@ -120,12 +214,14 @@ const components = [
   {
     name: "details",
     markup: `<details open><summary>Summary</summary>Details content</details>`,
-    selector: "details"
+    selector: "details",
+    states: ["default", "closed"]
   },
   {
     name: "summary",
     markup: `<details open><summary>Summary</summary>Details content</details>`,
-    selector: "summary"
+    selector: "summary",
+    states: ["default", "focus", "active"]
   },
   {
     name: "heading-h1",
@@ -150,17 +246,21 @@ const components = [
   {
     name: "input-color",
     markup: `<input type="color" value="#111111" />`,
-    selector: 'input[type="color"]'
+    selector: 'input[type="color"]',
+    states: ["default", "focus", "active"]
   },
   {
     name: "input-radio",
-    markup: `<label><input type="radio" name="radio" checked /> Selected</label>`,
-    selector: 'input[type="radio"]'
+    markup: radioMarkup,
+    selector: 'input[type="radio"]',
+    captureSelector: "label",
+    states: ["default", "unchecked", "focus"]
   },
   {
     name: "input-range",
     markup: `<input type="range" value="60" />`,
-    selector: 'input[type="range"]'
+    selector: 'input[type="range"]',
+    states: ["default", "focus", "active"]
   },
   {
     name: "fieldset",
@@ -242,15 +342,28 @@ test.beforeAll(async () => {
 });
 
 for (const component of components) {
-  test(component.name, async ({ page }) => {
-    const html =
-      component.template === "body"
-        ? createBodyHtml(component.markup)
-        : createWrapperHtml(component.markup);
-    await page.setContent(html);
-    const baseLocator = page.locator(component.selector);
-    const locator =
-      component.nth === undefined ? baseLocator : baseLocator.nth(component.nth);
-    await expect(locator).toHaveScreenshot(`${component.name}.png`);
-  });
+  const states = component.states ?? ["default"];
+  for (const state of states) {
+    const testName =
+      state === "default" ? component.name : `${component.name}-${state}`;
+    test(testName, async ({ page }) => {
+      const html =
+        component.template === "body"
+          ? createBodyHtml(component.markup)
+          : createWrapperHtml(component.markup);
+      await page.setContent(html);
+      const target = resolveLocator(page, component.selector, component.nth);
+      const capture = component.captureSelector
+        ? resolveLocator(page, component.captureSelector, component.captureNth)
+        : target;
+      const cleanup = await applyState(state, { page, target });
+      try {
+        await expect(capture).toHaveScreenshot(screenshotName(component.name, state));
+      } finally {
+        if (cleanup) {
+          await cleanup();
+        }
+      }
+    });
+  }
 }
