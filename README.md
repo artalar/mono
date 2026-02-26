@@ -44,6 +44,7 @@ Use `--mono-main` and `--mono-back` css variables. You could use [our sandbox](h
 - `npm run build:css` rebuilds `mono.css` from the component styles.
 - `npm run test` runs the screenshot suite.
 - `npm run test:update` records new baselines.
+- After each task: run tests, update screenshots when needed, and commit the new screenshot files.
 
 ## Roadmap
 
