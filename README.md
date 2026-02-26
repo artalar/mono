@@ -56,6 +56,8 @@ Storybook is deployed directly by Vercel through the repository integration.
 - Pull requests get Vercel preview deployments.
 - `main` updates production at https://monocss.vercel.app.
 - `vercel.json` defines the build pipeline (`npm run build-storybook`) and output directory (`storybook-static`).
+- Runtime expectation is Node.js `24.x` (`package.json` engines and `.nvmrc`).
+- In Vercel Project Settings, set **Node.js Version** to `24.x`.
 
 ## Roadmap
 
