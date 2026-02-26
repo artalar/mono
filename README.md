@@ -59,6 +59,11 @@ Storybook is deployed directly by Vercel through the repository integration.
 - Runtime expectation is Node.js `24.x` (`package.json` engines and `.nvmrc`).
 - In Vercel Project Settings, set **Node.js Version** to `24.x`.
 
+## Storybook information architecture
+
+- `Overview/Home` keeps the original landing page as the entry point.
+- `Components/*` contains one or more stories for every MONO style part.
+
 ## Roadmap
 
 - add styles to input elements and it variations

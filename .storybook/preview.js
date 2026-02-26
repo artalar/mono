@@ -3,6 +3,7 @@ import "../sandbox.css";
 
 const preview = {
   parameters: {
+    layout: "fullscreen",
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -11,17 +12,18 @@ const preview = {
     },
     options: {
       storySort: {
-        order: ["Showcase", "Test Suite"]
+        order: [
+          "Overview",
+          ["Home"],
+          "Components",
+          ["Layout and Base", "Typography", "Actions", "Forms", "Disclosure", "Data Display"]
+        ]
       }
     },
     a11y: {
       test: "error"
     }
-  },
-  decorators: [
-    (story) =>
-      `<div class="mono-all" style="min-height: 100vh; padding: 1.5rem; background: #eeeeee;">${story()}</div>`
-  ]
+  }
 };
 
 export default preview;
