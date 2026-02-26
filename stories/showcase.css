@@ -1,0 +1,66 @@
+.story-shell {
+  display: grid;
+  grid-template-columns: minmax(12rem, 16rem) minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.story-shell aside {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+}
+
+.story-nav ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.story-main {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.story-hero {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+
+.story-card {
+  display: grid;
+  gap: 0.75rem;
+  border: 1px solid var(--mono-main);
+  padding: 1rem;
+}
+
+.story-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.story-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.story-footer {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 960px) {
+  .story-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .story-shell aside {
+    position: static;
+  }
+}

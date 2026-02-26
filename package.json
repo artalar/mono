@@ -9,12 +9,22 @@
   "scripts": {
     "dev": "vite",
     "build:css": "node scripts/build-css.mjs",
-    "test": "playwright test",
-    "test:update": "playwright test --update-snapshots"
+    "test": "vitest run --project=storybook",
+    "test:watch": "vitest --project=storybook",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.1",
-    "vite": "^2.8.4"
+    "vite": "^2.8.4",
+    "storybook": "^10.2.12",
+    "@storybook/html-vite": "^10.2.12",
+    "@storybook/addon-vitest": "^10.2.12",
+    "@storybook/addon-a11y": "^10.2.12",
+    "@storybook/addon-docs": "^10.2.12",
+    "vitest": "^4.0.18",
+    "playwright": "^1.58.2",
+    "@vitest/browser-playwright": "^4.0.18",
+    "@vitest/coverage-v8": "^4.0.18"
   },
   "dependencies": {
     "colord": "^2.9.2"
