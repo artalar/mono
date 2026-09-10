@@ -1,0 +1,49 @@
+.component-surface {
+  min-height: 14rem;
+  padding: 1.5rem;
+  background: #eeeeee;
+  display: grid;
+  gap: 1rem;
+}
+
+.component-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.component-column {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.component-table {
+  max-width: 40rem;
+}
+
+.component-layout {
+  min-height: 20rem;
+  grid-template-columns: minmax(11rem, 15rem) minmax(0, 1fr);
+  align-items: start;
+}
+
+.component-layout > aside {
+  position: sticky;
+  top: 1.5rem;
+}
+
+.component-layout > main {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .component-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .component-layout > aside {
+    position: static;
+  }
+}
